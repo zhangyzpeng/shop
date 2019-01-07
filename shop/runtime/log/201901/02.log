@@ -1,0 +1,264 @@
+---------------------------------------------------------------
+[ 2019-01-02T09:51:55+08:00 ] 127.0.0.1 GET www.shop.com/
+[运行时间：1.108000s] [吞吐率：0.90req/s] [内存消耗：5,293.63kb] [文件加载：58]
+[ info ] [ LANG ] D:\wamp\www\shop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'index',
+    2 => 'index',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.shop.com',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:64.0) Gecko/20100101 Firefox/64.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept-encoding' => 'gzip, deflate',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\home\controller\Index->index[ D:\wamp\www\shop\application\home\controller\Index.php ]
+[ info ] [ VIEW ] D:\wamp\www\shop\public/../application/home\view\index\index.html [ array (
+  0 => 'sys',
+  1 => 'logo_img',
+  2 => 'img',
+) ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.029294s ] mysql:host=127.0.0.1;dbname=shop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `shop_system` [ RunTime:0.148258s ]
+[ sql ] [ SQL ] SELECT * FROM `shop_system` LIMIT 1 [ RunTime:0.020601s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `shop_image` [ RunTime:0.030153s ]
+[ sql ] [ SQL ] SELECT `img_url` FROM `shop_image` WHERE  `type` = 1 LIMIT 1 [ RunTime:0.005942s ]
+[ sql ] [ SQL ] SELECT `img_url` FROM `shop_image` WHERE  `type` = 2 LIMIT 1 [ RunTime:0.002153s ]
+---------------------------------------------------------------
+[ 2019-01-02T09:52:04+08:00 ] 127.0.0.1 GET www.shop.com/Goods/list
+[运行时间：0.231717s] [吞吐率：4.32req/s] [内存消耗：5,542.22kb] [文件加载：60]
+[ info ] [ LANG ] D:\wamp\www\shop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'Goods',
+    2 => 'index',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.shop.com',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:64.0) Gecko/20100101 Firefox/64.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.shop.com/',
+  'connection' => 'keep-alive',
+  'cookie' => 'PHPSESSID=bv94pbv06fgtet1mafgirq0b31; thinkphp_show_page_trace=0|0',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\home\controller\Goods->index[ D:\wamp\www\shop\application\home\controller\Goods.php ]
+[ info ] [ VIEW ] D:\wamp\www\shop\public/../application/home\view\goods\list.html [ array (
+  0 => 'sys',
+  1 => 'logo_img',
+) ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001553s ] mysql:host=127.0.0.1;dbname=shop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `shop_system` [ RunTime:0.014312s ]
+[ sql ] [ SQL ] SELECT * FROM `shop_system` LIMIT 1 [ RunTime:0.000543s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `shop_image` [ RunTime:0.008272s ]
+[ sql ] [ SQL ] SELECT `img_url` FROM `shop_image` WHERE  `type` = 1 LIMIT 1 [ RunTime:0.000597s ]
+---------------------------------------------------------------
+[ 2019-01-02T09:52:09+08:00 ] 127.0.0.1 GET www.shop.com/User/register
+[运行时间：0.113216s] [吞吐率：8.83req/s] [内存消耗：5,309.92kb] [文件加载：58]
+[ info ] [ LANG ] D:\wamp\www\shop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'User',
+    2 => 'register',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.shop.com',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:64.0) Gecko/20100101 Firefox/64.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.shop.com/',
+  'connection' => 'keep-alive',
+  'cookie' => 'PHPSESSID=bv94pbv06fgtet1mafgirq0b31; thinkphp_show_page_trace=0|0',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\home\controller\User->register[ D:\wamp\www\shop\application\home\controller\User.php ]
+[ info ] [ VIEW ] D:\wamp\www\shop\public/../application/home\view\user\register.html [ array (
+  0 => 'sys',
+  1 => 'logo_img',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.006969s ] mysql:host=127.0.0.1;dbname=shop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `shop_system` [ RunTime:0.013131s ]
+[ sql ] [ SQL ] SELECT * FROM `shop_system` LIMIT 1 [ RunTime:0.000448s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `shop_image` [ RunTime:0.006510s ]
+[ sql ] [ SQL ] SELECT `img_url` FROM `shop_image` WHERE  `type` = 1 LIMIT 1 [ RunTime:0.000668s ]
+---------------------------------------------------------------
+[ 2019-01-02T09:52:13+08:00 ] 127.0.0.1 GET www.shop.com/
+[运行时间：0.063543s] [吞吐率：15.74req/s] [内存消耗：5,294.26kb] [文件加载：58]
+[ info ] [ LANG ] D:\wamp\www\shop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'index',
+    2 => 'index',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.shop.com',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:64.0) Gecko/20100101 Firefox/64.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept-encoding' => 'gzip, deflate',
+  'connection' => 'keep-alive',
+  'cookie' => 'PHPSESSID=bv94pbv06fgtet1mafgirq0b31; thinkphp_show_page_trace=0|0',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\home\controller\Index->index[ D:\wamp\www\shop\application\home\controller\Index.php ]
+[ info ] [ VIEW ] D:\wamp\www\shop\public/../application/home\view\index\index.html [ array (
+  0 => 'sys',
+  1 => 'logo_img',
+  2 => 'img',
+) ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000649s ] mysql:host=127.0.0.1;dbname=shop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `shop_system` [ RunTime:0.012543s ]
+[ sql ] [ SQL ] SELECT * FROM `shop_system` LIMIT 1 [ RunTime:0.000426s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `shop_image` [ RunTime:0.007894s ]
+[ sql ] [ SQL ] SELECT `img_url` FROM `shop_image` WHERE  `type` = 1 LIMIT 1 [ RunTime:0.000478s ]
+[ sql ] [ SQL ] SELECT `img_url` FROM `shop_image` WHERE  `type` = 2 LIMIT 1 [ RunTime:0.000385s ]
+---------------------------------------------------------------
+[ 2019-01-02T09:52:14+08:00 ] 127.0.0.1 GET www.shop.com/User/login
+[运行时间：0.357690s] [吞吐率：2.80req/s] [内存消耗：5,310.11kb] [文件加载：58]
+[ info ] [ LANG ] D:\wamp\www\shop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'User',
+    2 => 'login',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.shop.com',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:64.0) Gecko/20100101 Firefox/64.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.shop.com/',
+  'connection' => 'keep-alive',
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=bv94pbv06fgtet1mafgirq0b31; thinkphp_show_page_trace=0|0',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\home\controller\User->login[ D:\wamp\www\shop\application\home\controller\User.php ]
+[ info ] [ VIEW ] D:\wamp\www\shop\public/../application/home\view\user\login.html [ array (
+  0 => 'sys',
+  1 => 'logo_img',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.006834s ] mysql:host=127.0.0.1;dbname=shop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `shop_system` [ RunTime:0.008893s ]
+[ sql ] [ SQL ] SELECT * FROM `shop_system` LIMIT 1 [ RunTime:0.000438s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `shop_image` [ RunTime:0.005452s ]
+[ sql ] [ SQL ] SELECT `img_url` FROM `shop_image` WHERE  `type` = 1 LIMIT 1 [ RunTime:0.000448s ]
+---------------------------------------------------------------
+[ 2019-01-02T09:52:15+08:00 ] 127.0.0.1 GET www.shop.com/
+[运行时间：0.081215s] [吞吐率：12.31req/s] [内存消耗：5,294.43kb] [文件加载：58]
+[ info ] [ LANG ] D:\wamp\www\shop\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'index',
+    2 => 'index',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.shop.com',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:64.0) Gecko/20100101 Firefox/64.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept-encoding' => 'gzip, deflate',
+  'connection' => 'keep-alive',
+  'cookie' => 'PHPSESSID=bv94pbv06fgtet1mafgirq0b31; thinkphp_show_page_trace=0|0',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\home\controller\Index->index[ D:\wamp\www\shop\application\home\controller\Index.php ]
+[ info ] [ VIEW ] D:\wamp\www\shop\public/../application/home\view\index\index.html [ array (
+  0 => 'sys',
+  1 => 'logo_img',
+  2 => 'img',
+) ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011263s ] mysql:host=127.0.0.1;dbname=shop;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `shop_system` [ RunTime:0.013560s ]
+[ sql ] [ SQL ] SELECT * FROM `shop_system` LIMIT 1 [ RunTime:0.000302s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `shop_image` [ RunTime:0.007542s ]
+[ sql ] [ SQL ] SELECT `img_url` FROM `shop_image` WHERE  `type` = 1 LIMIT 1 [ RunTime:0.000466s ]
+[ sql ] [ SQL ] SELECT `img_url` FROM `shop_image` WHERE  `type` = 2 LIMIT 1 [ RunTime:0.000379s ]
