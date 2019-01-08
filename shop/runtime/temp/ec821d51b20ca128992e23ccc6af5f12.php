@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:68:"D:\wamp\www\shop\public/../application/admin\view\category\list.html";i:1546577695;s:56:"D:\wamp\www\shop\application\admin\view\public\base.html";i:1545993573;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:68:"D:\wamp\www\shop\public/../application/admin\view\category\list.html";i:1546864178;s:56:"D:\wamp\www\shop\application\admin\view\public\base.html";i:1546830079;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-cn">
 <head>
@@ -27,12 +27,14 @@
     <tr>
       <th width="5%">ID</th>
       <th width="15%">分类名称</th>
+      <th width="15%">是否在首页展示</th>
       <th width="10%">操作</th>
     </tr>
     <?php if(is_array($cats) || $cats instanceof \think\Collection || $cats instanceof \think\Paginator): $i = 0; $__LIST__ = $cats;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
     <tr>
       <td><?php echo $i; ?></td>
       <td><?php echo str_repeat('--',$val['level']); ?><?php echo $val['cat_name']; ?></td>
+      <td><?php echo $val['is_index']==1?'是':'否'; ?></td>
       <td>
           <div class="button-group"> 
             <a class="button border-main" href="/admin/Category/<?php echo $val['id']; ?>/edit"><span class="icon-edit"></span> 修改</a><a class="button border-red" href="javascript:void(0)" onclick="return delCat(<?php echo $val['id']; ?>)"><span class="icon-trash-o"></span> 删除</a>

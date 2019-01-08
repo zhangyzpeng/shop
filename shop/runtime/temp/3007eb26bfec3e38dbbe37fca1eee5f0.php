@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:65:"D:\wamp\www\shop\public/../application/home\view\index\index.html";i:1546753147;s:57:"D:\wamp\www\shop\application\home\view\public\header.html";i:1545994529;s:54:"D:\wamp\www\shop\application\home\view\public\nav.html";i:1546248309;s:57:"D:\wamp\www\shop\application\home\view\public\footer.html";i:1545967252;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:65:"D:\wamp\www\shop\public/../application/home\view\index\index.html";i:1546916764;s:57:"D:\wamp\www\shop\application\home\view\public\header.html";i:1545994529;s:54:"D:\wamp\www\shop\application\home\view\public\nav.html";i:1546248309;s:57:"D:\wamp\www\shop\application\home\view\public\footer.html";i:1545967252;}*/ ?>
   <html>
  <head> 
   <meta charset="UTF-8" /> 
@@ -93,7 +93,7 @@
 
               <span class="nav_list_content_span"> 
                 <?php if(is_array($val['sub_cats']) || $val['sub_cats'] instanceof \think\Collection || $val['sub_cats'] instanceof \think\Paginator): $i = 0; $__LIST__ = $val['sub_cats'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vals): $mod = ($i % 2 );++$i;?>
-                <a href="Goods/list/id/<?php echo $val['id']; ?>" rel="nofollow" style="cursor: pointer;" class="first color_true" target="_blank" ><?php echo $vals['cat_name']; ?></a>
+                <a href="Goods/list/id/<?php echo $vals['id']; ?>" rel="nofollow" style="cursor: pointer;" class="first color_true" target="_blank" ><?php echo $vals['cat_name']; ?></a>
                 <?php endforeach; endif; else: echo "" ;endif; ?>
               </span>
             </dd> 
@@ -144,7 +144,7 @@
      </div>
     </div>
 <!-- 导航下面的广告图片结束-->	
-	
+	 <?php if(is_array($goods) || $goods instanceof \think\Collection || $goods instanceof \think\Paginator): $i = 0; $__LIST__ = $goods;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
    <!-- 中间的商品展示开始--->
     <div class="module_row module_row_1047918 MOD_ID_927998 has-log-mod" >
      <div class="mod_row MCUBE_MOD_ID_927998"> 
@@ -155,7 +155,7 @@
         <div class="lazyData clearfix cateTitleBar yahei" > 
          <div class="sideIcon" style="background-color: #8FABFF"></div> 
          <div class="cateTitleName col333">
-          女鞋&amp;包包
+         <?php echo $val['name']; ?>
          </div> 
         </div> 
        </div> 
@@ -171,54 +171,16 @@
          <div class="mslide_content_box"> 
           <div class="mslide_banners"> 
            <div class="mslide_banner clearfix mslide_banner_show" style="left: 0px;"> 
+            <?php if(is_array($val['index_goods']) || $val['index_goods'] instanceof \think\Collection || $val['index_goods'] instanceof \think\Paginator): $i = 0; $__LIST__ = $val['index_goods'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val2): $mod = ($i % 2 );++$i;?>
             <div class="swiper-item fl"> 
-             <a href="Goods/detail" class="cube-acm-node has-log-mod" target="_blank" > 
+             <a href="Goods/detail/id/<?php echo $val2['id']; ?>" class="cube-acm-node has-log-mod" target="_blank" > 
               <div class="swiper-img-wrap J_dynamic_imagebox J_loading_success"  > 
-               <img class="J_dynamic_img fill_img" src="static/home/images/ad6.jpg" alt="" />
-              </div> <p class="swiper-item-title">2018秋季新品女鞋休闲百搭针织毛线靴平底短靴套筒弹力骑士靴学生百搭新款韩版</p> 
-			   <p class="swiper-item-price"> <span>&yen;</span>71.28 </p> 
+               <img class="J_dynamic_img fill_img" src="/<?php echo $val2['goods_img']; ?>" alt="" />
+              </div> <p class="swiper-item-title"><?php echo $val2['goods_name']; ?></p> 
+			   <p class="swiper-item-price"> <span>&yen;</span><?php echo $val2['pro_price']; ?> </p> 
 			  </a> 
             </div> 
-            <div class="swiper-item fl"> 
-             <a href="Goods/detail" class="cube-acm-node has-log-mod" target="_blank" > 
-              <div class="swiper-img-wrap J_dynamic_imagebox J_loading_success"  > 
-               <img class="J_dynamic_img fill_img" src="static/home/images/ad6.jpg" alt="" />
-              </div> <p class="swiper-item-title">2018秋季新品女鞋休闲百搭针织毛线靴平底短靴套筒弹力骑士靴学生百搭新款韩版</p> 
-			   <p class="swiper-item-price"> <span>&yen;</span>71.28 </p> 
-			  </a> 
-            </div> 
-            <div class="swiper-item fl"> 
-             <a href="Goods/detail" class="cube-acm-node has-log-mod" target="_blank" > 
-              <div class="swiper-img-wrap J_dynamic_imagebox J_loading_success"  > 
-               <img class="J_dynamic_img fill_img" src="static/home/images/ad6.jpg" alt="" />
-              </div> <p class="swiper-item-title">2018秋季新品女鞋休闲百搭针织毛线靴平底短靴套筒弹力骑士靴学生百搭新款韩版</p> 
-			   <p class="swiper-item-price"> <span>&yen;</span>71.28 </p> 
-			  </a> 
-            </div> 
-            <div class="swiper-item fl"> 
-             <a href="Goods/detail" class="cube-acm-node has-log-mod" target="_blank" > 
-              <div class="swiper-img-wrap J_dynamic_imagebox J_loading_success"  > 
-               <img class="J_dynamic_img fill_img" src="static/home/images/ad6.jpg" alt="" />
-              </div> <p class="swiper-item-title">2018秋季新品女鞋休闲百搭针织毛线靴平底短靴套筒弹力骑士靴学生百搭新款韩版</p> 
-			   <p class="swiper-item-price"> <span>&yen;</span>71.28 </p> 
-			  </a> 
-            </div>  
-             <div class="swiper-item fl"> 
-             <a href="Goods/detail" class="cube-acm-node has-log-mod" target="_blank" > 
-              <div class="swiper-img-wrap J_dynamic_imagebox J_loading_success"  > 
-               <img class="J_dynamic_img fill_img" src="static/home/images/ad6.jpg" alt="" />
-              </div> <p class="swiper-item-title">2018秋季新品女鞋休闲百搭针织毛线靴平底短靴套筒弹力骑士靴学生百搭新款韩版</p> 
-			   <p class="swiper-item-price"> <span>&yen;</span>71.28 </p> 
-			  </a> 
-            </div> 
-             <div class="swiper-item fl"> 
-             <a href="Goods/detail" class="cube-acm-node has-log-mod" target="_blank" > 
-              <div class="swiper-img-wrap J_dynamic_imagebox J_loading_success"  > 
-               <img class="J_dynamic_img fill_img" src="static/home/images/ad6.jpg" alt="" />
-              </div> <p class="swiper-item-title">2018秋季新品女鞋休闲百搭针织毛线靴平底短靴套筒弹力骑士靴学生百搭新款韩版</p> 
-			   <p class="swiper-item-price"> <span>&yen;</span>71.28 </p> 
-			  </a> 
-            </div> 
+            <?php endforeach; endif; else: echo "" ;endif; ?>
            </div> 
 
           </div>
@@ -233,39 +195,19 @@
            <span class="goods-shopName">热销商品推荐</span> 
            <span class="turn-next">换一批</span> 
           </div>
-          <a class="right-goods-item clearfix cube-acm-node has-log-mod" href="Goods/detail" target="_blank" > 
+
+           <?php if(is_array($val['hot_goods']) || $val['hot_goods'] instanceof \think\Collection || $val['hot_goods'] instanceof \think\Paginator): $i = 0; $__LIST__ = $val['hot_goods'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
+          <a class="right-goods-item clearfix cube-acm-node has-log-mod" href="Goods/detail/id/<?php echo $vo['id']; ?>" target="_blank" > 
            <div class="J_dynamic_imagebox right-goods-img fl J_loading_success" >
-            <img class="J_dynamic_img fill_img" src="static/home/images/ad7.jpg" alt="" />
+            <img class="J_dynamic_img fill_img" src="/<?php echo $vo['goods_img']; ?>" alt="" />
            </div> 
+
            <div class="goods-info fl"> 
-            <p class=" goods-info-title">蓓尔明星同款秋季韩版百搭小白鞋平底白色系带学生板鞋女鞋运动休闲鞋</p> 
-            <p class=" goods-info-price"><span>&yen;</span>65.00</p> 
+            <p class=" goods-info-title"><?php echo $vo['goods_name']; ?></p> 
+            <p class=" goods-info-price"><span>&yen;</span><?php echo $vo['pro_price']; ?></p> 
            </div></a>
-		   
-		   <a class="right-goods-item clearfix cube-acm-node has-log-mod" href="Goods/detail" target="_blank" > 
-           <div class="J_dynamic_imagebox right-goods-img fl J_loading_success"  >
-            <img class="J_dynamic_img fill_img" src="static/home/images/ad7.jpg" alt="" />
-           </div> 
-           <div class="goods-info fl"> 
-            <p class=" goods-info-title">蓓尔明星同款秋季韩版百搭小白鞋平底白色系带学生板鞋女鞋运动休闲鞋</p> 
-            <p class=" goods-info-price"><span>&yen;</span>65.00</p> 
-           </div></a>
-          <a class="right-goods-item clearfix cube-acm-node has-log-mod" href="Goods/detail" target="_blank" > 
-           <div class="J_dynamic_imagebox right-goods-img fl J_loading_success" >
-            <img class="J_dynamic_img fill_img" src="static/home/images/ad7.jpg" alt="" />
-           </div> 
-           <div class="goods-info fl"> 
-            <p class=" goods-info-title">蓓尔明星同款秋季韩版百搭小白鞋平底白色系带学生板鞋女鞋运动休闲鞋</p> 
-            <p class=" goods-info-price"><span>&yen;</span>65.00</p> 
-           </div></a>
-          <a class="right-goods-item clearfix cube-acm-node has-log-mod" href="Goods/detail" target="_blank" > 
-           <div class="J_dynamic_imagebox right-goods-img fl J_loading_success" >
-            <img class="J_dynamic_img fill_img" src="static/home/images/ad7.jpg" alt="" />
-           </div> 
-           <div class="goods-info fl"> 
-            <p class=" goods-info-title">蓓尔明星同款秋季韩版百搭小白鞋平底白色系带学生板鞋女鞋运动休闲鞋</p> 
-            <p class=" goods-info-price"><span>&yen;</span>65.00</p> 
-           </div></a>
+          <?php endforeach; endif; else: echo "" ;endif; ?>
+
          </div>
         </div> 
        </div> 
@@ -276,132 +218,7 @@
 	
   
 
-     <div class="module_row module_row_1047918 MOD_ID_927998 has-log-mod" >
-     <div class="mod_row MCUBE_MOD_ID_927998"> 
-      <!--右边区域要绑定的资源位--> 
-      <div class="mainContent" style="margin-bottom:48px;"> 
-       <div class="topLink"> 
-        <!--顶部标题链接--> 
-        <div class="lazyData clearfix cateTitleBar yahei" > 
-         <div class="sideIcon" style="background-color: #8FABFF"></div> 
-         <div class="cateTitleName col333">
-          女鞋&amp;包包
-         </div> 
-        </div> 
-       </div> 
-       <div class="clearfix" > 
-        <!--左边大图--> 
-        <div class="leftBanner fl lazyData cube-acm-node has-log-mod" > 
-         <a href="#" target="_blank" class="cube-acm-node"> 
-		   <img class="leftBannerImg fl " src="static/home/images/ad5.jpg" />
-		 </a> 
-        </div> 
-        <!--中间左边商品轮播--> 
-        <div class="topSwiper fl lazyData" >
-         <div class="mslide_content_box"> 
-          <div class="mslide_banners"> 
-           <div class="mslide_banner clearfix mslide_banner_show" style="left: 0px;"> 
-            <div class="swiper-item fl"> 
-             <a href="Goods/detail" class="cube-acm-node has-log-mod" target="_blank" > 
-              <div class="swiper-img-wrap J_dynamic_imagebox J_loading_success"  > 
-               <img class="J_dynamic_img fill_img" src="static/home/images/ad6.jpg" alt="" />
-              </div> <p class="swiper-item-title">2018秋季新品女鞋休闲百搭针织毛线靴平底短靴套筒弹力骑士靴学生百搭新款韩版</p> 
-			   <p class="swiper-item-price"> <span>&yen;</span>71.28 </p> 
-			  </a> 
-            </div> 
-            <div class="swiper-item fl"> 
-             <a href="Goods/detail" class="cube-acm-node has-log-mod" target="_blank" > 
-              <div class="swiper-img-wrap J_dynamic_imagebox J_loading_success"  > 
-               <img class="J_dynamic_img fill_img" src="static/home/images/ad6.jpg" alt="" />
-              </div> <p class="swiper-item-title">2018秋季新品女鞋休闲百搭针织毛线靴平底短靴套筒弹力骑士靴学生百搭新款韩版</p> 
-			   <p class="swiper-item-price"> <span>&yen;</span>71.28 </p> 
-			  </a> 
-            </div> 
-            <div class="swiper-item fl"> 
-             <a href="Goods/detail" class="cube-acm-node has-log-mod" target="_blank" > 
-              <div class="swiper-img-wrap J_dynamic_imagebox J_loading_success"  > 
-               <img class="J_dynamic_img fill_img" src="static/home/images/ad6.jpg" alt="" />
-              </div> <p class="swiper-item-title">2018秋季新品女鞋休闲百搭针织毛线靴平底短靴套筒弹力骑士靴学生百搭新款韩版</p> 
-			   <p class="swiper-item-price"> <span>&yen;</span>71.28 </p> 
-			  </a> 
-            </div> 
-            <div class="swiper-item fl"> 
-             <a href="Goods/detail" class="cube-acm-node has-log-mod" target="_blank" > 
-              <div class="swiper-img-wrap J_dynamic_imagebox J_loading_success"  > 
-               <img class="J_dynamic_img fill_img" src="static/home/images/ad6.jpg" alt="" />
-              </div> <p class="swiper-item-title">2018秋季新品女鞋休闲百搭针织毛线靴平底短靴套筒弹力骑士靴学生百搭新款韩版</p> 
-			   <p class="swiper-item-price"> <span>&yen;</span>71.28 </p> 
-			  </a> 
-            </div>  
-             <div class="swiper-item fl"> 
-             <a href="Goods/detail" class="cube-acm-node has-log-mod" target="_blank" > 
-              <div class="swiper-img-wrap J_dynamic_imagebox J_loading_success"  > 
-               <img class="J_dynamic_img fill_img" src="static/home/images/ad6.jpg" alt="" />
-              </div> <p class="swiper-item-title">2018秋季新品女鞋休闲百搭针织毛线靴平底短靴套筒弹力骑士靴学生百搭新款韩版</p> 
-			   <p class="swiper-item-price"> <span>&yen;</span>71.28 </p> 
-			  </a> 
-            </div> 
-             <div class="swiper-item fl"> 
-             <a href="Goods/detail" class="cube-acm-node has-log-mod" target="_blank" > 
-              <div class="swiper-img-wrap J_dynamic_imagebox J_loading_success"  > 
-               <img class="J_dynamic_img fill_img" src="static/home/images/ad6.jpg" alt="" />
-              </div> <p class="swiper-item-title">2018秋季新品女鞋休闲百搭针织毛线靴平底短靴套筒弹力骑士靴学生百搭新款韩版</p> 
-			   <p class="swiper-item-price"> <span>&yen;</span>71.28 </p> 
-			  </a> 
-            </div> 
-           </div> 
-
-          </div>
-         </div>
-
-        </div> 
-        <div class="otherSlider lazyData" ></div> 
-        <!--右边区域--> 
-        <div class="rightWrapper fl lazyData">
-         <div class="bg-white">
-          <div class="header-wrapper"> 
-           <span class="goods-shopName">热销商品推荐</span> 
-           <span class="turn-next">换一批</span> 
-          </div>
-          <a class="right-goods-item clearfix cube-acm-node has-log-mod" href="Goods/detail" target="_blank" > 
-           <div class="J_dynamic_imagebox right-goods-img fl J_loading_success" >
-            <img class="J_dynamic_img fill_img" src="static/home/images/ad7.jpg" alt="" />
-           </div> 
-           <div class="goods-info fl"> 
-            <p class=" goods-info-title">蓓尔明星同款秋季韩版百搭小白鞋平底白色系带学生板鞋女鞋运动休闲鞋</p> 
-            <p class=" goods-info-price"><span>&yen;</span>65.00</p> 
-           </div></a>
-		   
-		   <a class="right-goods-item clearfix cube-acm-node has-log-mod" href="Goods/detail" target="_blank" > 
-           <div class="J_dynamic_imagebox right-goods-img fl J_loading_success"  >
-            <img class="J_dynamic_img fill_img" src="static/home/images/ad7.jpg" alt="" />
-           </div> 
-           <div class="goods-info fl"> 
-            <p class=" goods-info-title">蓓尔明星同款秋季韩版百搭小白鞋平底白色系带学生板鞋女鞋运动休闲鞋</p> 
-            <p class=" goods-info-price"><span>&yen;</span>65.00</p> 
-           </div></a>
-          <a class="right-goods-item clearfix cube-acm-node has-log-mod" href="Goods/detail" target="_blank" > 
-           <div class="J_dynamic_imagebox right-goods-img fl J_loading_success" >
-            <img class="J_dynamic_img fill_img" src="static/home/images/ad7.jpg" alt="" />
-           </div> 
-           <div class="goods-info fl"> 
-            <p class=" goods-info-title">蓓尔明星同款秋季韩版百搭小白鞋平底白色系带学生板鞋女鞋运动休闲鞋</p> 
-            <p class=" goods-info-price"><span>&yen;</span>65.00</p> 
-           </div></a>
-          <a class="right-goods-item clearfix cube-acm-node has-log-mod" href="Goods/detail" target="_blank" > 
-           <div class="J_dynamic_imagebox right-goods-img fl J_loading_success" >
-            <img class="J_dynamic_img fill_img" src="static/home/images/ad7.jpg" alt="" />
-           </div> 
-           <div class="goods-info fl"> 
-            <p class=" goods-info-title">蓓尔明星同款秋季韩版百搭小白鞋平底白色系带学生板鞋女鞋运动休闲鞋</p> 
-            <p class=" goods-info-price"><span>&yen;</span>65.00</p> 
-           </div></a>
-         </div>
-        </div> 
-       </div> 
-      </div> 
-     </div>
-    </div>
+    <?php endforeach; endif; else: echo "" ;endif; ?>
 	 <!-- 中间的商品展示开始--->
    </div> 
   </div> 

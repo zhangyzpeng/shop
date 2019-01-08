@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:64:"D:\wamp\www\shop\public/../application/admin\view\goods\add.html";i:1546755114;s:56:"D:\wamp\www\shop\application\admin\view\public\base.html";i:1545993573;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:64:"D:\wamp\www\shop\public/../application/admin\view\goods\add.html";i:1546926834;s:56:"D:\wamp\www\shop\application\admin\view\public\base.html";i:1546830079;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-cn">
 <head>
@@ -44,7 +44,7 @@
             <select name="cat_id" class="input w50">
               <option value="">请选择分类</option>
               <?php if(is_array($cats) || $cats instanceof \think\Collection || $cats instanceof \think\Paginator): $i = 0; $__LIST__ = $cats;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
-              <option value="<?php echo $val['pid']; ?>"><?php echo $val['cat_name']; ?></option>  
+              <option value="<?php echo $val['id']; ?>"><?php echo $val['cat_name']; ?></option>  
               <?php endforeach; endif; else: echo "" ;endif; ?>
             </select>
             <div class="tips"></div>
@@ -117,6 +117,17 @@
           <div class="field" style="padding-top:8px;"> 
             是 <input name="is_on" value="1"  type="radio" checked="checked" />
             否 <input name="is_on" value="0"  type="radio" />
+         
+          </div>
+        </div>
+
+          <div class="form-group">
+          <div class="label">
+            <label>是否热销</label>
+          </div>
+          <div class="field" style="padding-top:8px;"> 
+            是 <input name="is_hot" value="1"  type="radio" />
+            否 <input name="is_hot" value="0"  type="radio" checked="checked"/>
          
           </div>
         </div>
@@ -229,6 +240,8 @@ var uploader2 = WebUploader.create({
   uploader2.on( 'uploadSuccess', function( file,data) {
       if(data.status=='success'){
         $("#tip2").append('<img style="width:100px; height: 100px;" src=/'+data.msg+'>');
+        //商品颜色
+        $("#tip2").append('<input type="text" name="goods_color_desc[]">');
         $("#tip2").append('<input type="hidden" name="goods_color[]" value='+data.msg+'>');
       }else{
         $("#tip2").html('<span style="color:red;">'+data.msg+'</span>');

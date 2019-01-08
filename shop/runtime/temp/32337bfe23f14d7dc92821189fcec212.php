@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:68:"D:\wamp\www\shop\public/../application/admin\view\category\edit.html";i:1546575675;s:56:"D:\wamp\www\shop\application\admin\view\public\base.html";i:1545993573;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:68:"D:\wamp\www\shop\public/../application/admin\view\category\edit.html";i:1546858790;s:56:"D:\wamp\www\shop\application\admin\view\public\base.html";i:1546830079;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-cn">
 <head>
@@ -39,6 +39,18 @@
           <div class="tips">不选择上级分类默认为一级分类</div>
         </div>
       </div>
+      <?php if(($cat['pid'])!=0): ?>
+         <div class="form-group" id="sel">
+          <div class="label">
+            <label>是否上架</label>
+          </div>
+          <div class="field" style="padding-top:8px;"> 
+            是 <input name="is_index" value="1"  type="radio" <?php echo $cat['is_index']==1?'checked':''; ?> />
+            否 <input name="is_index" value="0"  type="radio" <?php echo $cat['is_index']==0?'checked':''; ?> />
+         
+          </div>
+        </div>
+        <?php endif; ?>
       <div class="form-group">
         <div class="label">
           <label>分类名称</label>

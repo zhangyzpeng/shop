@@ -1,0 +1,687 @@
+﻿﻿<!DOCTYPE html>
+<html lang="zh-CN">
+ <head> 
+  <meta charset="UTF-8" /> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" /> 
+  <meta http-equiv="Cache-Control" content="no-transform" /> 
+  <meta http-equiv="Cache-Control" content="no-siteapp" /> 
+  <title>linux运维架构--PHP开发</title> 
+  <meta name="description" content="分享互联网开发技术，分享各种开发视频教程。" /> 
+  <meta name="keywords" content="Linux运维，架构，PHP开发，数据库MySQL,Redis,Memecache，安全" /> 
+  <!--[if lt IE 9]>
+<script src="js/html5.js"></script>
+<script src="js/css3-mediaqueries.js"></script>
+<![endif]--> 
+  <link rel="stylesheet" id="crayon-font-mydream-css" href="/static/home/css/mydream.css" type="text/css" media="all" /> 
+  <link rel="stylesheet" id="style-css" href="/static/home/css/style.css" type="text/css" media="all" /> 
+  <link rel="stylesheet" id="swiper-css-css" href="/static/home/css/swiper.min.css" type="text/css" media="all" /> 
+  <script type="text/javascript" src="/static/home/js/jquery.min.js"></script> 
+  <script src="/static/home/js/swipe.jquery.min.js"></script> 
+  <link rel='stylesheet' id='iconfont-css'  href='/static/home/css/font.css' type='text/css' media='all' />
+  <script type='text/javascript' src='/static/home/js/superfish.js'></script>
+ </head> 
+ <body> 
+  <header id="masthead" class="site-header"> 
+   <div id="fix-header"></div> 
+   <div id="menu-box"> 
+    <div id="main-menu"> 
+     <hgroup class="logo-sites"> 
+      <h1 class="site-title"> <a href="/"><img src="/static/home/images/logo.png" alt="lampol" /></a> </h1> 
+     </hgroup> 
+     <div id="sidr-close"> 
+      <a href="#sidr-close" class="toggle-sidr-close">&times;</a> 
+     </div> 
+     <a href="#sidr-main" id="navigation-toggle" class="bars"><i class="iconfont icon-viewheadline"></i></a> 
+     <div id="site-nav-wrap"> 
+      <nav id="site-nav" class="main-nav"> 
+       <div class="menu-container"> 
+        <ul id="menu" class="down-menu nav-menu">
+			
+         <li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item"><a href="/"><i class="iconfont icon-home"></i>首页</a></li> 
+	 		 <li class="menu-item menu-item-type-taxonomy  menu-item-object-category menu-item-has-children"><a href="/list/cid/MzJiZDFFSDIyRW9iSUFKb0plcEFzanhjSzRpWUdVZW5sM3g0Y1Btdg%3D%3D">php</a> </li>
+		
+
+			 <li class="menu-item menu-item-type-taxonomy  menu-item-object-category menu-item-has-children"><a href="/list/cid/NGQzMUdKMk9rRVhXK1JmZ05BNGx6NWgzUXB4SVNlVmkwM2h0NGxUQg%3D%3D">linux</a> </li>
+		
+
+			 <li class="menu-item menu-item-type-taxonomy  menu-item-object-category menu-item-has-children"><a href="/list/cid/YmM4N0dkKzRGZktyb0tXYXIyUnZPa2svUkU4UjBMaUtYWW9zZjRZMg%3D%3D">微信</a> </li>
+		
+
+			 <li class="menu-item menu-item-type-taxonomy  menu-item-object-category menu-item-has-children"><a href="/list/cid/OTQzY3ZzZklDUEs4TFg5VzdUeUtJSXpzR0habnM5QytwNGVhOFRMeA%3D%3D">数据库</a> </li>
+		
+
+			 <li class="menu-item menu-item-type-taxonomy  menu-item-object-category menu-item-has-children"><a href="/list/cid/YmQ5NlVrWHJlRmxHVU8zTUc3bmwyN093N2xPbm1KYlBBSnZwSmNmNw%3D%3D">js</a> </li>
+		
+
+		        </ul> 
+       </div> 
+      </nav> 
+     </div> 
+    </div> 
+    <div class="clear"></div> 
+   </div> 
+  </header>
+
+﻿<div class="breadcrumb"> 
+   <div class="bull"> 
+    <i class="iconfont icon-bullhorn" aria-hidden="true"></i> 
+   </div> 
+   <div id="scrolldiv"> 
+    <div class="scrolltext"> 
+     <ul> 
+      <li>PHP-Linux技术交流群：163656536，微信公众号小程序开发群:661302139,thinkphp开发技术交流群:322682327,php小白入门学习群:560241539</li> 
+     </ul> 
+    </div> 
+   </div> 
+  </div> 
+  <div id="content"> 
+   <!-- 幻灯片调用begin --> 
+   <div id="slider" class="swiper-container"> 
+    <div class="swiper-wrapper"> 
+     <!-- 自定义栏目幻灯片show --> 
+     <!-- 随机幻灯片--> 
+	     <div class="swiper-slide"> 
+      <div class="swiper-slide-image"> 
+       <a href="https://ke.qq.com/course/package/11398" target="_blank" ><img src="/uploads/pic/20180818/6e45488ea0ab02de3183005736229b96.jpg" alt="零基础学习PHP开发小白福利课程" /></a> 
+      </div> 
+      <div class="swiper-slide-text"> 
+       <h2><a href="https://ke.qq.com/course/package/11398" target="_blank" rel="bookmark">零基础学习PHP开发小白福利课程</a></h2> 
+       <p> <a href="https://ke.qq.com/course/package/11398" target="_blank" rel="bookmark"> 这个课程主要是小白入门PHP开发的福利课程，从html css  到 js  php mysql。。。全了基础入门必备 </a> </p> 
+      </div> 
+     </div> 
+	     <div class="swiper-slide"> 
+      <div class="swiper-slide-image"> 
+       <a href="https://ke.qq.com/course/294870" target="_blank" ><img src="/uploads/pic/20180518/e5a8016604002f49d8b47119b723a1af.jpg" alt="零基础跟波哥学习PHP课程直播录制中" /></a> 
+      </div> 
+      <div class="swiper-slide-text"> 
+       <h2><a href="https://ke.qq.com/course/294870" target="_blank" rel="bookmark">零基础跟波哥学习PHP课程直播录制中</a></h2> 
+       <p> <a href="https://ke.qq.com/course/294870" target="_blank" rel="bookmark"> 从零基础学习web开发，html+css+php基础视频录制进行中，周一到周五每天都直播，点我开始看直播，或者php小白入门开发群:560241539 </a> </p> 
+      </div> 
+     </div> 
+	     <div class="swiper-slide"> 
+      <div class="swiper-slide-image"> 
+       <a href="https://ke.qq.com/course/package/9984?tuin=30289dc0" target="_blank" ><img src="/uploads/pic/20180525/b220157fd6efeeca6dfc65ff3e185700.jpg" alt="专为开发设计的linux运维架构课程" /></a> 
+      </div> 
+      <div class="swiper-slide-text"> 
+       <h2><a href="https://ke.qq.com/course/package/9984?tuin=30289dc0" target="_blank" rel="bookmark">专为开发设计的linux运维架构课程</a></h2> 
+       <p> <a href="https://ke.qq.com/course/package/9984?tuin=30289dc0" target="_blank" rel="bookmark"> 专为php开发设计的架构运维课程，加薪必备技能，干货多，使用性强，视频教程 <b>点击开始观看</b>。 </a> </p> 
+      </div> 
+     </div> 
+	     <div class="swiper-slide"> 
+      <div class="swiper-slide-image"> 
+       <a href="https://ke.qq.com/course/package/9378?flowToken=1002512" target="_blank" ><img src="/uploads/pic/20180510/8938d879debf3f1ff20770da27af41ee.jpg" alt="tp5从入门到实战开发系列课程包" /></a> 
+      </div> 
+      <div class="swiper-slide-text"> 
+       <h2><a href="https://ke.qq.com/course/package/9378?flowToken=1002512" target="_blank" rel="bookmark">tp5从入门到实战开发系列课程包</a></h2> 
+       <p> <a href="https://ke.qq.com/course/package/9378?flowToken=1002512" target="_blank" rel="bookmark"> tp框架入门精讲视频以及实战视频课程优惠包，视频教程 <b>点击开始观看</b> </a> </p> 
+      </div> 
+     </div> 
+	     <div class="swiper-slide"> 
+      <div class="swiper-slide-image"> 
+       <a href="https://ke.qq.com/course/package/9356?flowToken=1002510" target="_blank" ><img src="/uploads/pic/20180510/2a33e1fbc157742e71c5f0191db7d573.jpg" alt="微信小程序入门到实战精通课程包视频教程" /></a> 
+      </div> 
+      <div class="swiper-slide-text"> 
+       <h2><a href="https://ke.qq.com/course/package/9356?flowToken=1002510" target="_blank" rel="bookmark">微信小程序入门到实战精通课程包视频教程</a></h2> 
+       <p> <a href="https://ke.qq.com/course/package/9356?flowToken=1002510" target="_blank" rel="bookmark"> 微信小程序从入门到实战精通系列一二三季课程优惠半价包 <b>点击开始观看</b> </a> </p> 
+      </div> 
+     </div> 
+	
+     <!-- 自定义幻灯片 --> 
+    </div> 
+    <div class="swiper-pagination"></div> 
+    <div class="swiper-button-next"></div> 
+    <div class="swiper-button-prev"></div> 
+   </div> 
+   <!-- 幻灯片调用end --> 
+
+
+
+   <div id="primary" class="content-area"> 
+
+
+      <!-- 文章内容开始 --> 
+          <article id="post-167" class="post-167 post type-post status-publish format-standard hentry category-au3 tag-ie11 tag-wmic tag-101"> 
+     <div class="art-desc"> 
+	     <h3 class="art-t"> <a href="/detail/aid/MDU1M2R5ODhuZWNuUkxDOG5ReUFqOUVxUktxVGZOTENXUGE4anZ6RFRR" rel="bookmark" title="LARAVEL5.6框架入门基础(二)">LARAVEL5.6框架入门基础(二)</a> </h3> 
+      <div class="more"> 
+       <a href="javascript:;" rel="bookmark"><i class="iconfont icon-import"></i></a> 
+      </div> 
+      <div class="clear"></div> 
+      <div style="min-height:150px;margin:20px"> 
+       <div class="art-img"> 
+	       <a href="/detail/aid/MzI5M09ONk9NRlpyNmlXSHc1SlZCa28xN3h1NGNiMHJ3V2tNWFB6UEtB"><img src="/uploads/article/thumb/20180909/151df3c312bcd03ad281a6997f673e6e.jpg" alt="LARAVEL5.6框架入门基础(二)" /></a> 
+       </div> 
+       <span class="art-main">laravel为web艺术家而生。。</span> 
+      </div> 
+      <div class="clear"></div> 
+     </div> 
+     <div class="art_ft"> 
+      <div class="art-pub"> 
+       <div class="views"> 
+	       <i class="iconfont icon-chartbar"></i> 294 
+       </div> 
+       <div class="cmnt"> 
+	       <a href="javascript:;"><i class="iconfont icon-messageprocessing"></i>0</a> 
+       </div> 
+      </div> 
+      <div class="art-info"> 
+	      <span class="archive"><i class="iconfont icon-archive" aria-hidden="true"></i> lampol</span> 
+	      <span class="data"><i class="iconfont icon-calendartext"></i> 2018-09-09 15:55:07</span> 
+	      <span class="tag"><i class="iconfont icon-tagmultiple"></i> <a href="javascript:;" rel="tag">laravel</a></span> 
+      </div> 
+     </div> 
+     <div class="clear"></div> 
+    </article> 
+        <article id="post-167" class="post-167 post type-post status-publish format-standard hentry category-au3 tag-ie11 tag-wmic tag-101"> 
+     <div class="art-desc"> 
+	     <h3 class="art-t"> <a href="/detail/aid/ZjhhY3pta001cjFrR043bmVnSGRQbXg1cXhuWWNhbVg2UzM5Vm5aWmRB" rel="bookmark" title="laravel5.6框架入门基础(一)">laravel5.6框架入门基础(一)</a> </h3> 
+      <div class="more"> 
+       <a href="javascript:;" rel="bookmark"><i class="iconfont icon-import"></i></a> 
+      </div> 
+      <div class="clear"></div> 
+      <div style="min-height:150px;margin:20px"> 
+       <div class="art-img"> 
+	       <a href="/detail/aid/ZmIwNlpxZVkrMHZsdk1DeXc1cnA1MU9DdElScHZMcEU3eGZmSjBhNit3"><img src="/uploads/article/thumb/20180824/c8bf7731edd8f6e66b60bd77860ce0db.png" alt="laravel5.6框架入门基础(一)" /></a> 
+       </div> 
+       <span class="art-main">Laravel是一套web应用开发框架，为WEB艺术家而生</span> 
+      </div> 
+      <div class="clear"></div> 
+     </div> 
+     <div class="art_ft"> 
+      <div class="art-pub"> 
+       <div class="views"> 
+	       <i class="iconfont icon-chartbar"></i> 4579 
+       </div> 
+       <div class="cmnt"> 
+	       <a href="javascript:;"><i class="iconfont icon-messageprocessing"></i>0</a> 
+       </div> 
+      </div> 
+      <div class="art-info"> 
+	      <span class="archive"><i class="iconfont icon-archive" aria-hidden="true"></i> lampol</span> 
+	      <span class="data"><i class="iconfont icon-calendartext"></i> 2018-08-24 16:27:14</span> 
+	      <span class="tag"><i class="iconfont icon-tagmultiple"></i> <a href="javascript:;" rel="tag">laravel</a></span> 
+      </div> 
+     </div> 
+     <div class="clear"></div> 
+    </article> 
+        <article id="post-167" class="post-167 post type-post status-publish format-standard hentry category-au3 tag-ie11 tag-wmic tag-101"> 
+     <div class="art-desc"> 
+	     <h3 class="art-t"> <a href="/detail/aid/NDU2NjJWUExLZit2YnYzYVpuSm40SnI2UFFCZEFaMENhSmJWakk4QUp3" rel="bookmark" title="PHP开发常用的几个js插件">PHP开发常用的几个js插件</a> </h3> 
+      <div class="more"> 
+       <a href="javascript:;" rel="bookmark"><i class="iconfont icon-import"></i></a> 
+      </div> 
+      <div class="clear"></div> 
+      <div style="min-height:150px;margin:20px"> 
+       <div class="art-img"> 
+	       <a href="/detail/aid/YWM3N2tsS25CM0NOclFLYnNhYjJEd1c3M2FvUEhWalZsQU1EMEVIL3Vn"><img src="/uploads/article/thumb/20180811/5827c23ce0c9e2283d41261fa46fc7b2.jpg" alt="PHP开发常用的几个js插件" /></a> 
+       </div> 
+       <span class="art-main">本文主要讲了省市级三级联动插件以及表单验证，图片上传，弹出框等插件的使用</span> 
+      </div> 
+      <div class="clear"></div> 
+     </div> 
+     <div class="art_ft"> 
+      <div class="art-pub"> 
+       <div class="views"> 
+	       <i class="iconfont icon-chartbar"></i> 7653 
+       </div> 
+       <div class="cmnt"> 
+	       <a href="javascript:;"><i class="iconfont icon-messageprocessing"></i>0</a> 
+       </div> 
+      </div> 
+      <div class="art-info"> 
+	      <span class="archive"><i class="iconfont icon-archive" aria-hidden="true"></i> lampol</span> 
+	      <span class="data"><i class="iconfont icon-calendartext"></i> 2018-08-11 20:11:14</span> 
+	      <span class="tag"><i class="iconfont icon-tagmultiple"></i> <a href="javascript:;" rel="tag">js插件</a></span> 
+      </div> 
+     </div> 
+     <div class="clear"></div> 
+    </article> 
+        <article id="post-167" class="post-167 post type-post status-publish format-standard hentry category-au3 tag-ie11 tag-wmic tag-101"> 
+     <div class="art-desc"> 
+	     <h3 class="art-t"> <a href="/detail/aid/YmVhMEovTm1zcEVDczBjK29aN0FHSG04aExpcWxCNUQzT2xkbHJSWm5R" rel="bookmark" title="jQuery入门基础知识点">jQuery入门基础知识点</a> </h3> 
+      <div class="more"> 
+       <a href="javascript:;" rel="bookmark"><i class="iconfont icon-import"></i></a> 
+      </div> 
+      <div class="clear"></div> 
+      <div style="min-height:150px;margin:20px"> 
+       <div class="art-img"> 
+	       <a href="/detail/aid/NDNlMkxLR1YwcDlRdjF3VTFSVlpXUWk2SlU1c0htUTF0WHVaR1UwRm13"><img src="/uploads/article/thumb/20180805/7f6a7de5f0dbeb654858be4cfeb45821.jpg" alt="jQuery入门基础知识点" /></a> 
+       </div> 
+       <span class="art-main">jQuery 是一个高效、精简并且功能丰富的 JavaScript 工具库。它提供的 API 易于使用且兼容众多浏览器.</span> 
+      </div> 
+      <div class="clear"></div> 
+     </div> 
+     <div class="art_ft"> 
+      <div class="art-pub"> 
+       <div class="views"> 
+	       <i class="iconfont icon-chartbar"></i> 9087 
+       </div> 
+       <div class="cmnt"> 
+	       <a href="javascript:;"><i class="iconfont icon-messageprocessing"></i>0</a> 
+       </div> 
+      </div> 
+      <div class="art-info"> 
+	      <span class="archive"><i class="iconfont icon-archive" aria-hidden="true"></i> lampol</span> 
+	      <span class="data"><i class="iconfont icon-calendartext"></i> 2018-08-05 18:02:55</span> 
+	      <span class="tag"><i class="iconfont icon-tagmultiple"></i> <a href="javascript:;" rel="tag">jQuery</a></span> 
+      </div> 
+     </div> 
+     <div class="clear"></div> 
+    </article> 
+        <article id="post-167" class="post-167 post type-post status-publish format-standard hentry category-au3 tag-ie11 tag-wmic tag-101"> 
+     <div class="art-desc"> 
+	     <h3 class="art-t"> <a href="/detail/aid/NTdiZDNtTGsxTk9laFlvMUM3c3BEdlEyUUZnZjNSZFZiRkpRMnA5cmFB" rel="bookmark" title="JAVASCRIPT入门基础知识点(三)">JAVASCRIPT入门基础知识点(三)</a> </h3> 
+      <div class="more"> 
+       <a href="javascript:;" rel="bookmark"><i class="iconfont icon-import"></i></a> 
+      </div> 
+      <div class="clear"></div> 
+      <div style="min-height:150px;margin:20px"> 
+       <div class="art-img"> 
+	       <a href="/detail/aid/MzhiNlpSeEJsUVhuY1FKWTZ3Qm5sc1BjSlovMHY0aG5kU1FrTXlCMDhn"><img src="/uploads/article/thumb/20180729/90719a102e718fb4e0ee896ec9aff430.jpg" alt="JAVASCRIPT入门基础知识点(三)" /></a> 
+       </div> 
+       <span class="art-main">js的DOm以及BOM各种对象以及ajax还有es6新特性</span> 
+      </div> 
+      <div class="clear"></div> 
+     </div> 
+     <div class="art_ft"> 
+      <div class="art-pub"> 
+       <div class="views"> 
+	       <i class="iconfont icon-chartbar"></i> 10394 
+       </div> 
+       <div class="cmnt"> 
+	       <a href="javascript:;"><i class="iconfont icon-messageprocessing"></i>0</a> 
+       </div> 
+      </div> 
+      <div class="art-info"> 
+	      <span class="archive"><i class="iconfont icon-archive" aria-hidden="true"></i> lampol</span> 
+	      <span class="data"><i class="iconfont icon-calendartext"></i> 2018-07-29 15:35:05</span> 
+	      <span class="tag"><i class="iconfont icon-tagmultiple"></i> <a href="javascript:;" rel="tag">js基础</a></span> 
+      </div> 
+     </div> 
+     <div class="clear"></div> 
+    </article> 
+        <article id="post-167" class="post-167 post type-post status-publish format-standard hentry category-au3 tag-ie11 tag-wmic tag-101"> 
+     <div class="art-desc"> 
+	     <h3 class="art-t"> <a href="/detail/aid/ODJhNU1qSkRxOXNKQ09XMUpBOUpaL2I5VXVqUDZFanZrQVZsdHRjaTdR" rel="bookmark" title="JAVASCRIPT入门基础知识点(二)">JAVASCRIPT入门基础知识点(二)</a> </h3> 
+      <div class="more"> 
+       <a href="javascript:;" rel="bookmark"><i class="iconfont icon-import"></i></a> 
+      </div> 
+      <div class="clear"></div> 
+      <div style="min-height:150px;margin:20px"> 
+       <div class="art-img"> 
+	       <a href="/detail/aid/YzJhYjNzTFhqWlV5Z09jbmgrbDVRQ09BV0xFWlpLNm1QWFZ0YThvSmZ3"><img src="/uploads/article/thumb/20180722/d70e26a8550d4ca5eeab43fcdb3124a5.jpg" alt="JAVASCRIPT入门基础知识点(二)" /></a> 
+       </div> 
+       <span class="art-main">对象是最复杂的数据类型，又可以分成三个子类型。</span> 
+      </div> 
+      <div class="clear"></div> 
+     </div> 
+     <div class="art_ft"> 
+      <div class="art-pub"> 
+       <div class="views"> 
+	       <i class="iconfont icon-chartbar"></i> 12259 
+       </div> 
+       <div class="cmnt"> 
+	       <a href="javascript:;"><i class="iconfont icon-messageprocessing"></i>0</a> 
+       </div> 
+      </div> 
+      <div class="art-info"> 
+	      <span class="archive"><i class="iconfont icon-archive" aria-hidden="true"></i> lampol</span> 
+	      <span class="data"><i class="iconfont icon-calendartext"></i> 2018-07-22 19:56:41</span> 
+	      <span class="tag"><i class="iconfont icon-tagmultiple"></i> <a href="javascript:;" rel="tag">js基础</a></span> 
+      </div> 
+     </div> 
+     <div class="clear"></div> 
+    </article> 
+        <article id="post-167" class="post-167 post type-post status-publish format-standard hentry category-au3 tag-ie11 tag-wmic tag-101"> 
+     <div class="art-desc"> 
+	     <h3 class="art-t"> <a href="/detail/aid/MWYyZTZRYTAzT3QxeWdBbWhqRlZGa1NxWVgzS1BBZ2lEZWFYQTUxbjF3" rel="bookmark" title="javascript入门基础知识点(一)">javascript入门基础知识点(一)</a> </h3> 
+      <div class="more"> 
+       <a href="javascript:;" rel="bookmark"><i class="iconfont icon-import"></i></a> 
+      </div> 
+      <div class="clear"></div> 
+      <div style="min-height:150px;margin:20px"> 
+       <div class="art-img"> 
+	       <a href="/detail/aid/NDdlZG9GbUJaNThkb2czOXlpbFFiVUx0TjRjQWx5NjVNNFE4WWs3UUZ3"><img src="/uploads/article/thumb/20180719/40b242ddb55ea5ef3e9907813a4f3fc3.jpg" alt="javascript入门基础知识点(一)" /></a> 
+       </div> 
+       <span class="art-main">JavaScript一种直译式脚本语言，是一种动态类型、弱类型、跨平台，基于原型的语言，内置支持类型。
+</span> 
+      </div> 
+      <div class="clear"></div> 
+     </div> 
+     <div class="art_ft"> 
+      <div class="art-pub"> 
+       <div class="views"> 
+	       <i class="iconfont icon-chartbar"></i> 12997 
+       </div> 
+       <div class="cmnt"> 
+	       <a href="javascript:;"><i class="iconfont icon-messageprocessing"></i>0</a> 
+       </div> 
+      </div> 
+      <div class="art-info"> 
+	      <span class="archive"><i class="iconfont icon-archive" aria-hidden="true"></i> lampol</span> 
+	      <span class="data"><i class="iconfont icon-calendartext"></i> 2018-07-19 19:29:01</span> 
+	      <span class="tag"><i class="iconfont icon-tagmultiple"></i> <a href="javascript:;" rel="tag">js</a></span> 
+      </div> 
+     </div> 
+     <div class="clear"></div> 
+    </article> 
+        <article id="post-167" class="post-167 post type-post status-publish format-standard hentry category-au3 tag-ie11 tag-wmic tag-101"> 
+     <div class="art-desc"> 
+	     <h3 class="art-t"> <a href="/detail/aid/Nzg2MWt2UEpaRXJleENQK1hBVkxvd0FDdDRNSnAyR0VWZkduaGlzVmlB" rel="bookmark" title="XML和JSON语法以及PHP操作">XML和JSON语法以及PHP操作</a> </h3> 
+      <div class="more"> 
+       <a href="javascript:;" rel="bookmark"><i class="iconfont icon-import"></i></a> 
+      </div> 
+      <div class="clear"></div> 
+      <div style="min-height:150px;margin:20px"> 
+       <div class="art-img"> 
+	       <a href="/detail/aid/ZWIxM0x3Z2lQZjk3YktlZmtXcHliaWRKQlZNUkxOWHkzRkZ4NmF1cldn"><img src="/uploads/article/thumb/20180707/8c33709a217279453e7b156dd8a45dec.jpg" alt="XML和JSON语法以及PHP操作" /></a> 
+       </div> 
+       <span class="art-main">XML以及JSON是一种数据传输格式</span> 
+      </div> 
+      <div class="clear"></div> 
+     </div> 
+     <div class="art_ft"> 
+      <div class="art-pub"> 
+       <div class="views"> 
+	       <i class="iconfont icon-chartbar"></i> 15627 
+       </div> 
+       <div class="cmnt"> 
+	       <a href="javascript:;"><i class="iconfont icon-messageprocessing"></i>0</a> 
+       </div> 
+      </div> 
+      <div class="art-info"> 
+	      <span class="archive"><i class="iconfont icon-archive" aria-hidden="true"></i> lampol</span> 
+	      <span class="data"><i class="iconfont icon-calendartext"></i> 2018-07-07 17:57:18</span> 
+	      <span class="tag"><i class="iconfont icon-tagmultiple"></i> <a href="javascript:;" rel="tag">XML和JSON</a></span> 
+      </div> 
+     </div> 
+     <div class="clear"></div> 
+    </article> 
+        <article id="post-167" class="post-167 post type-post status-publish format-standard hentry category-au3 tag-ie11 tag-wmic tag-101"> 
+     <div class="art-desc"> 
+	     <h3 class="art-t"> <a href="/detail/aid/N2Q5YzBUUXF4S0YxMzEvZm5aR3RDTVRVRjdjVFFtVzRBN0M3K05RVGpn" rel="bookmark" title="PHP之正则表达式">PHP之正则表达式</a> </h3> 
+      <div class="more"> 
+       <a href="javascript:;" rel="bookmark"><i class="iconfont icon-import"></i></a> 
+      </div> 
+      <div class="clear"></div> 
+      <div style="min-height:150px;margin:20px"> 
+       <div class="art-img"> 
+	       <a href="/detail/aid/N2Y4YlpUWkZ1UGpkeDQwK3J6ZTBEbXN4STZERGpqRGNjb3IwdFFlcTZ3"><img src="/uploads/article/thumb/20180704/11523c72bceadbf40cd50eb8267f3e25.jpg" alt="PHP之正则表达式" /></a> 
+       </div> 
+       <span class="art-main">正则表达式，又称规则表达式，计算机科学的一个概念。正则表达式通常被用来检索、替换那些符合某个模式(规则)的文本。</span> 
+      </div> 
+      <div class="clear"></div> 
+     </div> 
+     <div class="art_ft"> 
+      <div class="art-pub"> 
+       <div class="views"> 
+	       <i class="iconfont icon-chartbar"></i> 16452 
+       </div> 
+       <div class="cmnt"> 
+	       <a href="javascript:;"><i class="iconfont icon-messageprocessing"></i>0</a> 
+       </div> 
+      </div> 
+      <div class="art-info"> 
+	      <span class="archive"><i class="iconfont icon-archive" aria-hidden="true"></i> lampol</span> 
+	      <span class="data"><i class="iconfont icon-calendartext"></i> 2018-07-04 18:08:44</span> 
+	      <span class="tag"><i class="iconfont icon-tagmultiple"></i> <a href="javascript:;" rel="tag">正则表达式</a></span> 
+      </div> 
+     </div> 
+     <div class="clear"></div> 
+    </article> 
+        <article id="post-167" class="post-167 post type-post status-publish format-standard hentry category-au3 tag-ie11 tag-wmic tag-101"> 
+     <div class="art-desc"> 
+	     <h3 class="art-t"> <a href="/detail/aid/NjdhMlZqem9ZNjViK3VHYU1ZcWNtbWp5enRTbHBqNzc2N1k2SnhQNmxB" rel="bookmark" title="一个简单实用的分页类">一个简单实用的分页类</a> </h3> 
+      <div class="more"> 
+       <a href="javascript:;" rel="bookmark"><i class="iconfont icon-import"></i></a> 
+      </div> 
+      <div class="clear"></div> 
+      <div style="min-height:150px;margin:20px"> 
+       <div class="art-img"> 
+	       <a href="/detail/aid/YjliNmZoQ3lLV3ZqZkV3dWNQVjlGa0M5SHpXQ0FhOGdYRG5WV1Q2RDBB"><img src="/uploads/article/thumb/20180623/3edcb3574defa31d127df4aede1a33d7.jpg" alt="一个简单实用的分页类" /></a> 
+       </div> 
+       <span class="art-main">简单美观大方的分页类。实用。。</span> 
+      </div> 
+      <div class="clear"></div> 
+     </div> 
+     <div class="art_ft"> 
+      <div class="art-pub"> 
+       <div class="views"> 
+	       <i class="iconfont icon-chartbar"></i> 20767 
+       </div> 
+       <div class="cmnt"> 
+	       <a href="javascript:;"><i class="iconfont icon-messageprocessing"></i>0</a> 
+       </div> 
+      </div> 
+      <div class="art-info"> 
+	      <span class="archive"><i class="iconfont icon-archive" aria-hidden="true"></i> lampol</span> 
+	      <span class="data"><i class="iconfont icon-calendartext"></i> 2018-06-23 17:59:03</span> 
+	      <span class="tag"><i class="iconfont icon-tagmultiple"></i> <a href="javascript:;" rel="tag">分页类</a></span> 
+      </div> 
+     </div> 
+     <div class="clear"></div> 
+    </article> 
+     <!-- 分页开始 --> 
+    <nav class="navigation pagination" role="navigation"> 
+	    <ul class="pagination"><li class="disabled"><span>上一页</span></li> <li class="active"><span>1</span></li><li><a href="/?page=2">2</a></li><li><a href="/?page=3">3</a></li><li><a href="/?page=4">4</a></li> <li><a href="/?page=2">下一页</a></li></ul>    </nav> 
+ <!-- 分页结束--> 
+   </div> 
+   <script>
+
+if($(window).width()>'533'){
+	        $('.pagination .active').addClass('page-numbers').addClass('current');
+		        $('.pagination').css('width','300px');
+			        $('.pagination li').css('float','left');
+}else{
+
+	        $('.pagination li').addClass('page-numbers');
+		        if($('.active').text()=='1'){
+
+				                $('.pagination li').last().addClass('current').css('margin-left','45%');
+						        }else{
+								                $('.pagination li').first().addClass('current').css('margin-left','45%');
+										        }
+			        $('.pagination li a').addClass('screen-reader-text');
+}
+   </script>
+
+
+
+
+
+﻿<link rel="stylesheet" type="text/css" href="/static/admin/lib/Validform_v5.3.2/css/style.css">
+<!-- 右侧开始--> 
+   <div id="sidebar" class="widget-area"> 
+   
+<!-- 右侧搜索框开始-->
+    <aside id="search-2" class="widget widget_search"> 
+     <div id="searchbar"> 
+	     <form method="post" id="searchform" action="/search"> 
+       <input type="text" datatype="hz|zm" errormsg="请输入2-10位的汉字或者字母"  name="words" id="s" placeholder="输入2-10汉字或者字母搜索内容"  /> 
+       <button type="submit" id="searchsubmit">搜索</button> 
+	<span class="Validform_checktip"> </span>
+      </form> 
+     </div> 
+     <div class="clear"></div> 
+    </aside> 
+<!-- 右侧搜索框结束--> 
+<!-- 右侧分类开始--> 
+    <aside id="categories-2" class="widget widget_categories"> 
+     <h3 class="widget-title"><i class="iconfont icon-viewgrid"></i>分类目录</h3> 
+     <ul>
+	      
+	     <li class="cat-item cat-item-47"><a href="/list/cid/MDI4NzkvWGczRkY0VjlXT2xZRkcrcXB0WUlnaFRMdE1wUUNRSWtiKw%3D%3D">php</a> </li> 
+       
+	     <li class="cat-item cat-item-47"><a href="/list/cid/MTJlMTJZWWtwdEtMaHZRdXYxYkJyckNkRERPRCtkcVYvTmIzelZUeQ%3D%3D">linux</a> </li> 
+       
+	     <li class="cat-item cat-item-47"><a href="/list/cid/NWFhZm5OakUySUZjdy9oTGh5K0RKOWphRk1iOGV6SDdmUTRlekZSYw%3D%3D">微信</a> </li> 
+       
+	     <li class="cat-item cat-item-47"><a href="/list/cid/MjM4NGViRjZTRFRYUWVKeUdsWEdMQzBBK3ZOOUlMQ2ZOcmZuWkZ2Sg%3D%3D">数据库</a> </li> 
+       
+	     <li class="cat-item cat-item-47"><a href="/list/cid/NWU0MFI3M2gyNjNnV0JSbHlTOStScTRQb29pai9HUTZERHV3VkdkNA%3D%3D">js</a> </li> 
+           </ul> 
+     <div class="clear"></div> 
+    </aside> 
+	<!-- 右侧分类结束--> 
+
+	<!-- 近期文章开始--> 
+    <aside id="recent-posts-2" class="widget widget_recent_entries"> 
+     <h3 class="widget-title"><i class="iconfont icon-viewgrid"></i>近期文章</h3> 
+     <ul> 
+	     	     <li> <a href="/detail/aid/MTNmYnUrQ0RaQnN0VGhETWU0SElzc3ZETUdKVFRMN21PcGJrUWg0L2Zn">LARAVEL5.6框架入门基础(二)</a> </li> 
+      	     <li> <a href="/detail/aid/NDgzYnR6ZGlGdmlzS1BFTjg4anMzSUc0TjV6a21TbXZwWTA1OW9HZnVB">laravel5.6框架入门基础(一)</a> </li> 
+      	     <li> <a href="/detail/aid/MjFiMTJ5dDJzQURybzFpWFlmVWFVWjE5Y2g4MWJnZlVyZW4xRkdxbGZR">PHP开发常用的几个js插件</a> </li> 
+      	     <li> <a href="/detail/aid/NzI1ZmhMeDRmTjRDZmVKODdSc2lnVDIxNjJzT2hLbks5aVJaNDZQZkp3">jQuery入门基础知识点</a> </li> 
+      	     <li> <a href="/detail/aid/YjcwMC9YMG5NTnB0eFFuZW04dVFHbDlnOTBCY2U4NVMyUmdzREVETFdB">JAVASCRIPT入门基础知识点(三)</a> </li> 
+      	     <li> <a href="/detail/aid/MTNjMEdaRWorUjJTemdaUVcxdkd1ZitCZk1VVlNlWEtPdW5NYnhLNXdB">JAVASCRIPT入门基础知识点(二)</a> </li> 
+      	     <li> <a href="/detail/aid/NzcxNGlLY3FOTC93Q2tOVDh1WkZLc2xhdWc2Szl0aDVVMDFrRGFSOGRR">javascript入门基础知识点(一)</a> </li> 
+      	     <li> <a href="/detail/aid/NDgzMVB6QVVGenlTeFVuaG42N0pLYS9kQThtTWdwMXBDUlJKTFB5cjV3">XML和JSON语法以及PHP操作</a> </li> 
+      	     <li> <a href="/detail/aid/MGNjNk1ISzdaeGxNcXpIRTZxaVd2Zk43Ti8vL0xCUktmZ25TVXlSODhR">PHP之正则表达式</a> </li> 
+      	     <li> <a href="/detail/aid/OTFjOWlqaVRrTEcreDN1ZGloOTMycTUrdHhaSXdlcHJBY1hrNjZkZmhR">一个简单实用的分页类</a> </li> 
+           </ul> 
+     <div class="clear"></div> 
+    </aside> 
+<!-- 近期文章结束--> 
+    <aside id="img_cat-2" class="widget img_cat"> 
+     <h3 class="widget-title"><i class="iconfont icon-viewgrid"></i>最多评论</h3> 
+     <div class="img_cat"> 
+      <ul> 
+	            <div class="img-box"> 
+        <div class="img-x2"> 
+         <figure class="insets"> 
+		<a href="/detail/aid/ZmM5MWVaNUpFeHFlNEJQa0RWcE45Wmg1aXBoWm5JSkVmcllKcmxGTA=="><img style="width:160px;height:100px" src="/uploads/article/thumb/20171210/b2d456b7daddcfaf21fd8a1acbbbbdb8.jpg" /></a> 
+          <div class="img-title"> 
+		  <a href="/detail/ZmJhY25PZE5IdVdRa2M3NXV3dXpVdkZzWXFKZVRQdG4wSERiV3FldA==" rel="bookmark">php以及jQuery生成条形码以及二维码</a> 
+          </div> 
+         </figure> 
+        </div> 
+       </div> 
+              <div class="img-box"> 
+        <div class="img-x2"> 
+         <figure class="insets"> 
+		<a href="/detail/aid/NGY4ZGVyRGxTZUVRbjlRc20vVGRWd3gwSVJZQnQyeFNoT2xiNkt6d1Fn"><img style="width:160px;height:100px" src="/uploads/article/thumb/20180118/2daff28cd045340fca2234c3214c1b0c.jpg" /></a> 
+          <div class="img-title"> 
+		  <a href="/detail/MzExMzhsaysxQ1E4Y21sTk5xc2IyT2ZPK2dHczNmdit2ZUtySUdGVWhn" rel="bookmark">微信卡券管理12</a> 
+          </div> 
+         </figure> 
+        </div> 
+       </div> 
+              <div class="img-box"> 
+        <div class="img-x2"> 
+         <figure class="insets"> 
+		<a href="/detail/aid/NTUyYzZyTzBKaWp2SXZsTGRzT0MvN1dzTVdvY3RtVDB3cTFTdUFUN2ln"><img style="width:160px;height:100px" src="/uploads/article/thumb/20180105/278c7ceba74ea58875f2b889674e588b.jpg" /></a> 
+          <div class="img-title"> 
+		  <a href="/detail/NDgwMWJVUDlRazJMY3JZMmFXVjhXNlNkQW5Lbk05TmVsUi8xWFhTbjhR" rel="bookmark">生成带参数的微信二维码9</a> 
+          </div> 
+         </figure> 
+        </div> 
+       </div> 
+              <div class="img-box"> 
+        <div class="img-x2"> 
+         <figure class="insets"> 
+		<a href="/detail/aid/YTE1OTJPYkpXa1B5ZWlKdmc3Y2l4eURNZTcxWmNDLzhEcW0xVlhrKw=="><img style="width:160px;height:100px" src="/uploads/article/thumb/20171215/c73e4248366647be5f1e21503015d257.jpg" /></a> 
+          <div class="img-title"> 
+		  <a href="/detail/NDAxZEI4cDdYMWoydHJ5ZVhVWERlZTlyTkxMMWsvemdPaWZEM1pkVQ==" rel="bookmark">各种支付接口中常用的加密解密以及验签</a> 
+          </div> 
+         </figure> 
+        </div> 
+       </div> 
+              <div class="clear"></div> 
+      </ul> 
+     </div> 
+     <div class="clear"></div> 
+    </aside> 
+
+		<!-- 人们标签开始--> 
+    <div class="sidebar-roll"> 
+     <aside id="tag_cloud-2" class="widget tag_cloud"> 
+      <h3 class="widget-title"><i class="iconfont icon-viewgrid"></i>热门标签</h3> 
+      <div class="tagcloud"> 
+	      	      <a href="javascript:;" class="tag-cloud-link tag-link-14 tag-link-position-3" style="color:#84dde8;font-size: 15px;;">二维码条形码</a> 
+       	      <a href="javascript:;" class="tag-cloud-link tag-link-14 tag-link-position-3" style="color:#84dde8;font-size: 15px;;">oAuth</a> 
+       	      <a href="javascript:;" class="tag-cloud-link tag-link-14 tag-link-position-3" style="color:#84dde8;font-size: 15px;;">rsa md5</a> 
+       	      <a href="javascript:;" class="tag-cloud-link tag-link-14 tag-link-position-3" style="color:#84dde8;font-size: 15px;;">微信公众号</a> 
+       	      <a href="javascript:;" class="tag-cloud-link tag-link-14 tag-link-position-3" style="color:#84dde8;font-size: 15px;;">ss翻墙</a> 
+       	      <a href="javascript:;" class="tag-cloud-link tag-link-14 tag-link-position-3" style="color:#84dde8;font-size: 15px;;">linux命令</a> 
+       	      <a href="javascript:;" class="tag-cloud-link tag-link-14 tag-link-position-3" style="color:#84dde8;font-size: 15px;;">微信小程序</a> 
+       	      <a href="javascript:;" class="tag-cloud-link tag-link-14 tag-link-position-3" style="color:#84dde8;font-size: 15px;;">vim</a> 
+       	      <a href="javascript:;" class="tag-cloud-link tag-link-14 tag-link-position-3" style="color:#84dde8;font-size: 15px;;">双向加密</a> 
+       	      <a href="javascript:;" class="tag-cloud-link tag-link-14 tag-link-position-3" style="color:#84dde8;font-size: 15px;;">代码发布</a> 
+       	      <a href="javascript:;" class="tag-cloud-link tag-link-14 tag-link-position-3" style="color:#84dde8;font-size: 15px;;">MySQL备份</a> 
+       	      <a href="javascript:;" class="tag-cloud-link tag-link-14 tag-link-position-3" style="color:#84dde8;font-size: 15px;;">数据库操作类</a> 
+       	      <a href="javascript:;" class="tag-cloud-link tag-link-14 tag-link-position-3" style="color:#84dde8;font-size: 15px;;">分页类</a> 
+       	      <a href="javascript:;" class="tag-cloud-link tag-link-14 tag-link-position-3" style="color:#84dde8;font-size: 15px;;">验证码</a> 
+       	      <a href="javascript:;" class="tag-cloud-link tag-link-14 tag-link-position-3" style="color:#84dde8;font-size: 15px;;">文件上传</a> 
+       	      <a href="javascript:;" class="tag-cloud-link tag-link-14 tag-link-position-3" style="color:#84dde8;font-size: 15px;;">正则表达式</a> 
+       	      <a href="javascript:;" class="tag-cloud-link tag-link-14 tag-link-position-3" style="color:#84dde8;font-size: 15px;;">XML和JSON</a> 
+       	      <a href="javascript:;" class="tag-cloud-link tag-link-14 tag-link-position-3" style="color:#84dde8;font-size: 15px;;">MySQL数据库</a> 
+       	      <a href="javascript:;" class="tag-cloud-link tag-link-14 tag-link-position-3" style="color:#84dde8;font-size: 15px;;">MySQL</a> 
+       	      <a href="javascript:;" class="tag-cloud-link tag-link-14 tag-link-position-3" style="color:#84dde8;font-size: 15px;;">js</a> 
+       	      <a href="javascript:;" class="tag-cloud-link tag-link-14 tag-link-position-3" style="color:#84dde8;font-size: 15px;;">js基础</a> 
+       	      <a href="javascript:;" class="tag-cloud-link tag-link-14 tag-link-position-3" style="color:#84dde8;font-size: 15px;;">jQuery</a> 
+       	      <a href="javascript:;" class="tag-cloud-link tag-link-14 tag-link-position-3" style="color:#84dde8;font-size: 15px;;">js插件</a> 
+       	      <a href="javascript:;" class="tag-cloud-link tag-link-14 tag-link-position-3" style="color:#84dde8;font-size: 15px;;">laravel</a> 
+              <div class="clear"></div> 
+      </div> 
+      <div class="clear"></div> 
+     </aside> 
+    </div> 
+	<!-- 热门标签结束--> 
+   </div> 
+   <div class="clear"></div> 
+  </div>
+<script type="text/javascript" src="/static/admin/lib/Validform_v5.3.2/js/Validform_v5.3.2_min.js"></script> 
+<script>
+$("#searchform").Validform({
+	datatype:{
+		"hz":/^[\u4e00-\u9fa5]{2,10}$/,
+		"zm":/^[a-zA-Z]{2,10}$/	
+		},
+	tiptype:3
+
+}); 
+
+</script>
+
+
+﻿  <!-- 友情链接 --> 
+  <div id="links"> 
+   <ul> 
+    <li id="linkcat-25" class="linkcat"><h2>博友</h2> 
+     <ul class="xoxo blogroll"> 
+	     </ul> </li> 
+   </ul> 
+   <div class="clear"></div> 
+  </div> 
+  <!-- 版权说明 --> 
+  <footer id="footer"> 
+   <div class="bottom-nav"> 
+   </div> 
+   <div id="contentinfo">
+     Copyright &copy; 2007-2019 lampol All rights reserved. | 鲁ICP备15015126号-3   </div> 
+  </footer> 
+  <script>
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        loop: true, /**循环**/
+		autoplayDisableOnInteraction: false,
+		direction: 'vertical',	/**切换方向**/	
+		speed: 500,  /**幻灯片切换时间**/
+		autoplay: 5000, /**设置，自动播放开启，并设置停留时间**/
+        paginationClickable: true, /**导航可以点击**/
+		effect: 'flip', /**切换效果**/	
+    });
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?30d84fc2226b0d5fa20aa31358b28e72";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+
+</script> 
+ </body>
+</html>
+

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:64:"D:\wamp\www\shop\public/../application/admin\view\image\add.html";i:1545984302;s:56:"D:\wamp\www\shop\application\admin\view\public\base.html";i:1545993573;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:64:"D:\wamp\www\shop\public/../application/admin\view\image\add.html";i:1545984302;s:56:"D:\wamp\www\shop\application\admin\view\public\base.html";i:1546830079;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-cn">
 <head>

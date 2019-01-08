@@ -1,0 +1,177 @@
+﻿{include file="public/header"}
+  <link href="/static/home/css/index_1.css" rel="stylesheet" type="text/css" /> 
+  <link href="/static/home/css/index.css-93c948fe.css" rel="stylesheet" type="text/css" /> 
+  <script src="/static/home/js/jquery.js"></script>
+  <script src="/static/home/js/distpicker.js" > </script>
+
+  <link rel="stylesheet" href="/static/lib/validform/css/style.css">
+  <script src="/static/lib/validform/js/Validform_v5.3.2_min.js"></script>
+
+ </head> 
+ <body class="media_screen_1200"> 
+
+{include file="public/nav"}
+
+  
+  <div id="body_wrap"> 
+   <div class="mu_wrap wrap clearfix"> 
+    <div id="navListWrap">
+     <div class="mu_nav_wrap"> 
+        {include file="public/side" /}
+      </div> 
+    <div id="address_wrap">
+     <div class="addr_right topay" isaddress="true"> 
+      <h2 class="addr_title">地址管理</h2> 
+      <div class="addr_edit" id="J_s_addr_edit"> 
+        {foreach $addresses as $vo}
+        <!--
+         <div class="addr_section " aid="570781677"> 
+        }
+        <ul class="clearfix"> 
+         <li class="name">刘波</li> 
+         <li class="addr" data-province="山东省" data-city="青岛市" data-area="黄岛区" data-street="胶南市青岛路麟瑞商务广场1511"> 山东省青岛市黄岛区胶南市青岛路麟瑞商务广场1511 </li> 
+         <li class="zcode"></li> 
+         <li class="mobile">155****8866</li> 
+         <li class="oper"> <a href="javascript:;" class="J_default" aid="570781677">设为默认</a> <a href="javascript:;" class="edit" aid="570781677">编辑</a> <a href="javascript:;" class="del nobd" aid="570781677">删除</a> </li> 
+         <li class="enaddr"></li> 
+        </ul> 
+       </div> 
+        -->
+         <div class="addr_section " aid="570781677"> 
+        <ul class="clearfix"> 
+         <li class="name">{$vo.name}</li> 
+         <li class="addr" data-province="山东省" data-city="青岛市" data-area="黄岛区" data-street="胶南市青岛路麟瑞商务广场1511">{$vo.pro}{$vo.city}{$vo.dis}{$vo.street}</li> 
+         <li class="zcode"></li> 
+         <li class="mobile">{$vo.mobile}</li> 
+         <li class="oper"> 
+            <a href="javascript:;" class="J_default" aid="570781677">设为默认</a>
+            <a href="javascript:;" class="edit" aid="570781677">编辑</a> 
+            <a href="javascript:;" onclick="delAdd({$vo['id']})" class="del nobd" aid="570781677">删除</a>
+         </li> 
+         <li class="enaddr"></li> 
+        </ul> 
+       </div> 
+        {/foreach}
+       <div class="add_new_addr clearfix">
+        <span id="J_saddAddress">+添加地址</span>
+       </div> 
+       <!--事先隐藏地址-->
+       <div class="addressbox_warp"  style="display: none"> 
+        <div class="addressbox" id="J_sAddrWrap"></div> 
+        <div class="address_wrapper">
+         <div class="__addressPop"> 
+         <form action="/address/add" id="form" method="post">
+          <dl class="address_pop"> 
+            <!--
+           <input class="J_addressid" name="addressId" value="" type="hidden" /> 
+           <input class="J_isdefault" name="addressId" value="false" type="hidden" /> 
+         -->
+           <dt>
+            姓名：
+           </dt> 
+           <dd> 
+            <i class="needicon">*</i> 
+            <input datatype="s2-3" data-errormsg="请填写收货人" data-normal="" class="text formsize_normal J_name J_form vm" name="name" value="" type="text" /> 
+            <span class="prompt name_select"></span> 
+           </dd> 
+           <dt>
+            手机：
+           </dt> 
+           <dd> 
+            <i class="needicon">*</i> 
+            <input datatype="mobile" data-errormsg="请填写正确的联系号码" data-normal="" class="text formsize_normal J_mobile J_form vm" name="mobile" value="" type="text" /> 
+            <span class="prompt mobile_select"></span> 
+           </dd> 
+           <dt></dt> 
+           <dt>
+            地区：
+           </dt> 
+           <dd class="pt_ie6hack"> 
+            <i class="needicon">*</i> 
+           
+		     <div data-toggle="distpicker" > 
+            <select daname="pro"></select>
+            <select name="city"></select>
+            <select name="dis"></select>
+          </div>
+           </dd> 
+                    <!--
+           <dt>
+            邮政编码：
+           </dt> 
+           <dd> 
+            <i class="needicon">*</i> 
+            <input data-type="c" data-errormsg="请填写正确的邮政编码" data-normal="" class="text formsize_normal J_postcode J_form vm" name="postcode" value="" type="text" /> 
+            <span class="prompt mail_select"></span> 
+           </dd> 
+                    -->
+           <dt>
+            街道地址：
+           </dt> 
+           <dd> 
+            <i class="needicon">*</i> 
+            <textarea datatype="s5-20" data-min="5" data-max="100" data-normal="请填写街道地址，最少5个字，最多不能超过100个字" data-errormsg="请填写街道地址，最少5个字，最多不能超过100个字" class="textarea formsize_large J_street J_form" name="street" cols="30" rows="3"></textarea> 
+            <span class="prompt breakline">请填写街道地址，最少5个字，最多不能超过20个字</span> 
+           </dd> 
+           
+           <dd class="pt10 oper_btn"> 
+            <button href="javascript:;" class="confirm_btn J_okbtn mr10">确认地址</button>
+            <button href="javascript:;" class="cancel_btn J_cancelbtn">取消</button>
+           </dd> 
+          </dl>
+        </form>
+         </div>
+        </div> 
+        <!-- <div class="addressbox addressfirst addresslist" action="/trade/address/addfororder"> </div> --> 
+       </div> 
+      
+      </div>
+     </div>
+    </div> 
+   </div> 
+  </div> 
+ </body>
+</html>
+
+<script type="text/javascript">
+  $("#J_saddAddress").click(function(){
+      $(".addressbox_warp").show();
+  })
+  $(".cancel_btn").click(function(){
+      $(".addressbox_warp").hide();
+  })
+
+    //验证表单是否正确
+    $("#form").Validform({
+        tiptype:4,
+        ajaxPost:true,
+        //自己定义手机号
+        datatype:{
+          //手机验证规则
+          mobile:/^1[3|5|6|7|8|9]\d{9}$/
+        },
+        callback:function(res){
+            if(res.status=='success'){
+                layer.msg(res.msg,{icon:1});
+            }else{
+                layer.msg(res.msg,{icon:2});
+            }
+            location.reload();
+        }
+    });
+
+    //删除记录
+    function delAdd(id){
+      layer.confirm('你要确认删除这个',function(){
+        //alert('ok');
+        $.post('/address/del',{id:id},function(res){
+           if(res.status=='success'){
+                layer.msg(res.msg,{icon:1});
+            }else{
+                layer.msg(res.msg,{icon:2});
+            }
+            location.reload();
+        });
+      });
+    }
+</script>

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:63:"D:\wamp\www\shop\public/../application/home\view\order\pay.html";i:1545965517;s:57:"D:\wamp\www\shop\application\home\view\public\header.html";i:1545966559;s:57:"D:\wamp\www\shop\application\home\view\public\footer.html";i:1545967252;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:63:"D:\wamp\www\shop\public/../application/home\view\order\pay.html";i:1545965517;s:57:"D:\wamp\www\shop\application\home\view\public\header.html";i:1545994529;s:57:"D:\wamp\www\shop\application\home\view\public\footer.html";i:1545967252;}*/ ?>
 ﻿<html>
  <head> 
   <meta charset="UTF-8" /> 
@@ -8,6 +8,8 @@
   <title><?php echo $sys['title']; ?></title> 
   <meta name="description" content="<?php echo $sys['desc']; ?>}" /> 
   <meta name="keywords" content="<?php echo $sys['keywords']; ?>" /> 
+  <script src="/static/admin/js/jquery.js"></script>
+  <script src="/static/lib/layer/layer.js"></script>
 
   <link href="/static/home/css/index.css-709a8a6f_1.css" rel="stylesheet" type="text/css" /> 
   <link rel="stylesheet" type="text/css" href="/static/home/css/bottom.css" media="all" /> 

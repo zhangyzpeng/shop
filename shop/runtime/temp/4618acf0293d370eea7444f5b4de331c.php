@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:66:"D:\wamp\www\shop\public/../application/home\view\goods\detail.html";i:1546769813;s:57:"D:\wamp\www\shop\application\home\view\public\header.html";i:1545994529;s:54:"D:\wamp\www\shop\application\home\view\public\nav.html";i:1546248309;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:66:"D:\wamp\www\shop\public/../application/home\view\goods\detail.html";i:1546931426;s:57:"D:\wamp\www\shop\application\home\view\public\header.html";i:1545994529;s:54:"D:\wamp\www\shop\application\home\view\public\nav.html";i:1546248309;}*/ ?>
 ﻿<html>
  <head> 
   <meta charset="UTF-8" /> 
@@ -82,7 +82,7 @@
       <div class="clearfix"> 
        <div class="fl goods-info goods-info-dacu" id="J_GoodsInfo"> 
         <div class="info-box"> 
-         <h1 class="goods-title"><span itemprop="name">春秋装新款百搭波浪喇叭袖针织打底衫一字领修身上衣套头毛衣女士</span></h1> 
+         <h1 class="goods-title"><span itemprop="name"><?php echo $goods['goods_name']; ?></span></h1> 
          <div class="goods-prowrap goods-main"> 
 
           <div class="clearfix main-box"> 
@@ -91,9 +91,8 @@
              现价：
             </dt> 
             <dd class="property-cont property-cont-now fl"> 
-             <span id="J_NowPrice" class="price">&yen;34.88</span> 
-             <span id="J_OriginPrice" class="price">&yen;49.84</span> 
-             <em class="pre-price-desc">（9.15价&yen;29.90）</em> 
+             <span  class="price">&yen;<?php echo $goods['pro_price']; ?></span> 
+             <span >&nbsp;&nbsp;<strike><sub>&yen;<?php echo $goods['origin_price']; ?></sub></strike></span> 
             </dd> 
             <dd class="property-extra fr"> 
              <span class="mr10">评价： <span class="num"> 447 </span> </span> 
@@ -119,25 +118,28 @@
             <b class="J_PannelClose pannel-close"></b> 
            </div> 
            <div class="box"> 
-            <dl class="style clearfix" style="display: block;"> 
+            <dl class="clearfix" style="display: block;"> 
              <dt>
-              颜色：
+              商品颜色：
              </dt> 
              <dd> 
-              <ol class="J_StyleList style-list clearfix">
-               <li class="img"  ><img src="/static/home/images/ad11.jpg" /><b></b></li>
-               <li class="img"  ><img src="/static/home/images/ad12.jpg" /><b></b></li>
-              </ol> 
+              <ol id="goods_color" class="J_StyleList style-list clearfix">
+                <?php if(is_array($goods['goods_color']) || $goods['goods_color'] instanceof \think\Collection || $goods['goods_color'] instanceof \think\Paginator): $i = 0; $__LIST__ = $goods['goods_color'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
+                  <li class="img" data-color="<?php echo $goods['goods_color_desc'][$key]; ?>"  ><img src="/<?php echo $val; ?>" /><b></b></li>
+                <?php endforeach; endif; else: echo "" ;endif; ?>
+              </ol>
              </dd> 
             </dl> 
-            <dl class="size clearfix" style="display: block;"> 
+            <dl class="clearfix" style="display: block;"> 
              <dt>
               尺码：
              </dt> 
-             <dd> 
-              <ol class="J_SizeList size-list clearfix">
-               <li class=" c" data-id="100" title="均码">均码</li>
-              </ol> 
+             <dd>
+              <ol id="goods_type" class="J_SizeList size-list clearfix">
+                <?php if(is_array($goods['goods_type']) || $goods['goods_type'] instanceof \think\Collection || $goods['goods_type'] instanceof \think\Paginator): $i = 0; $__LIST__ = $goods['goods_type'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
+                  <li data-id="100" data-type="<?php echo $val; ?>"><?php echo $val; ?></li>
+                <?php endforeach; endif; else: echo "" ;endif; ?>
+              </ol>
              </dd> 
             </dl> 
             <dl class="clearfix"> 
@@ -147,9 +149,10 @@
              <dd class="num clearfix"> 
               <div id="J_GoodsNum" class="goods-num fl" data-stock="1921"> 
                <span class="num-reduce num-disable"></span> 
-               <input autocomplete="off" class="num-input" value="1" type="text" /> 
+               <input id="goods_num" autocomplete="off" class="num-input" value="1" type="text" /> 
                <span class="num-add "></span> 
               </div> 
+              <input id="goods_id" class="num-input" value="<?php echo $goods['id']; ?>" type="hidden" /> 
               <div class="J_GoodsStock goods-stock fl">
                库存1921件
               </div> 
@@ -165,12 +168,44 @@
            </div> 
           </div> 
           <div class="goods-buy clearfix"> 
-           <a href="/Order/topay" id="J_PinTuanBuy" class="fl mr10 buy-btn buy-now">购买</a> 
-           <a href="/Order/cart" id="J_BuyCart" class="fl mr10 buy-cart buy-btn"><i class="m-icon m-icon-shopping-cart"></i></a> 
+           <a href="/Order/topay" id="buy" class="fl mr10 buy-btn buy-now">购买</a> 
+           <a href="/Order/cart" id="cart" class="fl mr10 buy-cart buy-btn"><i class="m-icon m-icon-shopping-cart"></i></a> 
 
           </div> 
          </div> 
+         <!--购物车实现-->
+         <script type="text/javascript">
+           $("#cart").click(function(){
+            //获取商品颜色
+            goods_color = $("#goods_color .c").attr('data-color');
+            //获取商品类型
+            //alert(goods_color);
+            goods_type = $("#goods_type .c").attr('data-type');
+            //获取商品数量
+            //alert(goods_type);
+            //获取商品id用于查询
+            goods_id = $("#goods_id").val();
+            //alert(goods_id);
 
+            //return false;
+            goods_num  = $("#goods_num").val();
+            //alert(goods_num);
+
+            //判断用户是否选择商品
+            if(goods_color==undefined||goods_type==undefined){
+              alert('请先选择商品颜色和属性');
+              return false;
+            }
+
+            //将用户购买的东西存入cookie
+
+            $.post('/cart/add',{goods_color:goods_color,goods_type:goods_type,goods_id:goods_id,goods_num:goods_num},function(){
+
+            }
+              );
+            return false;
+           })
+         </script>
          <div class="goods-extra clearfix"> 
           <div class="extra-services"> 
            <div class="fl clearfix label">
@@ -195,7 +230,7 @@
        </div> 
        <div class="fl goods-topimg" id="J_GoodsImg"> 
         <div class="big-img"> 
-         <img id="J_BigImg" src="/static/home/images/ad18.jpg" alt="" width="400" /> 
+         <img id="J_BigImg" src="/<?php echo $goods['goods_img']; ?>" alt="" width="400" /> 
         </div> 
         <div id="J_SmallImgs" class="small-img" style="display: none;"> 
          <div class="box"> 
@@ -246,7 +281,7 @@
        </div> 
        <div class="tabbar-occupying ui-hide"></div> 
        <!-- 选项页 --> 
-       <div class="panel-box"> 
+       <div class="panel-box">
         <!-- 图文详情 --> 
         <div class="module-panel module-graphic" id="J_ModuleGraphic">
          <!-- 图文详情 -->
@@ -270,6 +305,7 @@
           <div class="graphic-block"> 
            <!-- 描述 --> 
            <!-- 表格 --> 
+            <img src="/<?php echo $goods['goods_desc']; ?>">
            <table class="parameter-table" id="J_ParameterTable"> 
             <tbody> 
              <tr class=""> 

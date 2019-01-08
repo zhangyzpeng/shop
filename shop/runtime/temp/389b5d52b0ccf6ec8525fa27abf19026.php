@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:67:"D:\wamp\www\shop\public/../application/admin\view\category\add.html";i:1546570421;s:56:"D:\wamp\www\shop\application\admin\view\public\base.html";i:1545993573;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:67:"D:\wamp\www\shop\public/../application/admin\view\category\add.html";i:1546858268;s:56:"D:\wamp\www\shop\application\admin\view\public\base.html";i:1546830079;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-cn">
 <head>
@@ -28,7 +28,7 @@
           <label>上级分类：</label>
         </div>
         <div class="field">
-          <select name="pid" class="input w50">
+          <select id="pid" class="input w50" onchange="setIndex()">
             <option value="0">顶级分类</option>
             <?php if(is_array($top_cats) || $top_cats instanceof \think\Collection || $top_cats instanceof \think\Paginator): $i = 0; $__LIST__ = $top_cats;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
               <option value="<?php echo $val['id']; ?>"><?php echo $val['cat_name']; ?></option>
@@ -37,6 +37,18 @@
           <div class="tips">不选择上级分类默认为一级分类</div>
         </div>
       </div>
+
+       <div class="form-group" style="display: none;" id="sel">
+          <div class="label">
+            <label>是否上架</label>
+          </div>
+          <div class="field" style="padding-top:8px;"> 
+            是 <input name="is_index" value="1"  type="radio" />
+            否 <input name="is_index" value="0"  type="radio"  checked="checked"/>
+         
+          </div>
+        </div>
+
       <div class="form-group">
         <div class="label">
           <label>分类名称</label>
@@ -57,6 +69,17 @@
     </form>
   </div>
 </div>
+<script type="text/javascript">
+  function setIndex(){
+    pid = $("#pid").val();
+    //alert(pid);
+    if(pid==0){
+      $("#sel").hide();
+    }else{
+      $("#sel").show();
+    }
+  }
+</script>
 
 </body>
 </html>

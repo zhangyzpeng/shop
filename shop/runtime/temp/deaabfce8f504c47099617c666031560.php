@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:65:"D:\wamp\www\shop\public/../application/admin\view\goods\edit.html";i:1546751968;s:56:"D:\wamp\www\shop\application\admin\view\public\base.html";i:1545993573;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:65:"D:\wamp\www\shop\public/../application/admin\view\goods\edit.html";i:1546927802;s:56:"D:\wamp\www\shop\application\admin\view\public\base.html";i:1546830079;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh-cn">
 <head>
@@ -107,6 +107,7 @@
                   <?php if(is_array($goods['goods_color']) || $goods['goods_color'] instanceof \think\Collection || $goods['goods_color'] instanceof \think\Paginator): $i = 0; $__LIST__ = $goods['goods_color'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>  
                   <img style="width:100px; height: 100px;" src="/<?php echo $val; ?>">
                   <input type="hidden" name="goods_color[]" value='<?php echo $val; ?>'>
+                  <input type="text" name="goods_color_desc[]" value="<?php echo $goods['goods_color_desc'][$key]; ?>">
                   <!--
                <img style="width:200px; height: 200px;" src="http://img14.360buyimg.com/n1/s350x449_jfs/t25414/290/2767919437/153103/9cebcf9a/5bed2a16N49fa19ed.jpg!cc_350x449.jpg">
                 -->
@@ -123,6 +124,17 @@
           <div class="field" style="padding-top:8px;"> 
             是 <input name="is_on" <?php echo $goods['is_on']==1?'checked':''; ?> value="1"  type="radio" checked="checked" />
             否 <input name="is_on" value="0"  type="radio" <?php echo $goods['is_on']==0?'checked':''; ?>/>
+         
+          </div>
+        </div>
+
+          <div class="form-group">
+          <div class="label">
+            <label>是否热销</label>
+          </div>
+          <div class="field" style="padding-top:8px;"> 
+            是 <input name="is_hot" value="1" <?php echo $goods['is_hot']==1?'checked':''; ?>  type="radio" />
+            否 <input name="is_hot" value="0" <?php echo $goods['is_hot']==0?'checked':''; ?>  type="radio" checked="checked"/>
          
           </div>
         </div>
