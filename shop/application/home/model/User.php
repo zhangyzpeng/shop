@@ -41,7 +41,7 @@ class User extends Model
     public function getImg($email){
         return $this->where('number',$email)->value('img_url');
     }
-    //获取登录用户的ID
+    //根据登录邮箱获取登录用户的ID
     public function getUserId($email){
         return $this->where('number',$email)->value('id');
     }

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:67:"D:\wamp\www\shop\public/../application/home\view\address\index.html";i:1546341768;s:57:"D:\wamp\www\shop\application\home\view\public\header.html";i:1545994529;s:54:"D:\wamp\www\shop\application\home\view\public\nav.html";i:1546248309;s:55:"D:\wamp\www\shop\application\home\view\public\side.html";i:1546328944;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:67:"D:\wamp\www\shop\public/../application/home\view\address\index.html";i:1547009991;s:57:"D:\wamp\www\shop\application\home\view\public\header.html";i:1545994529;s:54:"D:\wamp\www\shop\application\home\view\public\nav.html";i:1546248309;s:55:"D:\wamp\www\shop\application\home\view\public\side.html";i:1546328944;}*/ ?>
 ﻿<html>
  <head> 
   <meta charset="UTF-8" /> 
@@ -171,7 +171,7 @@
             <i class="needicon">*</i> 
            
 		     <div data-toggle="distpicker" > 
-            <select daname="pro"></select>
+            <select name="pro"></select>
             <select name="city"></select>
             <select name="dis"></select>
           </div>

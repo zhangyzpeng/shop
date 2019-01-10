@@ -21,6 +21,8 @@ class Goods extends Base
     public function detail($id){
     	$GoodsModel = new GoodsModel;
     	$goods = $GoodsModel->getGoodsDetail($id);
+        //dump($goods);
+        //exit;
     	$goods['goods_color'] = explode('|',$goods['goods_color']);
         $goods['goods_color_desc'] = explode('|',$goods['goods_color_desc']);
     	$goods['goods_type'] = explode('|',$goods['goods_type']);

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:66:"D:\wamp\www\shop\public/../application/home\view\goods\detail.html";i:1546931426;s:57:"D:\wamp\www\shop\application\home\view\public\header.html";i:1545994529;s:54:"D:\wamp\www\shop\application\home\view\public\nav.html";i:1546248309;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:66:"D:\wamp\www\shop\public/../application/home\view\goods\detail.html";i:1547004436;s:57:"D:\wamp\www\shop\application\home\view\public\header.html";i:1545994529;s:54:"D:\wamp\www\shop\application\home\view\public\nav.html";i:1546248309;}*/ ?>
 ﻿<html>
  <head> 
   <meta charset="UTF-8" /> 
@@ -168,8 +168,8 @@
            </div> 
           </div> 
           <div class="goods-buy clearfix"> 
-           <a href="/Order/topay" id="buy" class="fl mr10 buy-btn buy-now">购买</a> 
-           <a href="/Order/cart" id="cart" class="fl mr10 buy-cart buy-btn"><i class="m-icon m-icon-shopping-cart"></i></a> 
+           <a href="javascript:;" id="buy" class="fl mr10 buy-btn buy-now">购买</a> 
+           <a href="javascript:;" id="cart" class="fl mr10 buy-cart buy-btn"><i class="m-icon m-icon-shopping-cart"></i></a> 
 
           </div> 
          </div> 
@@ -200,11 +200,45 @@
             //将用户购买的东西存入cookie
 
             $.post('/cart/add',{goods_color:goods_color,goods_type:goods_type,goods_id:goods_id,goods_num:goods_num},function(){
-
+                location.href="/Order/cart";
             }
               );
-            return false;
+            //return false
            })
+
+
+
+           //直接进行购买 
+
+            $("#buy").click(function(){
+            //获取商品颜色
+            goods_color = $("#goods_color .c").attr('data-color');
+            //获取商品类型
+            //alert(goods_color);
+            goods_type = $("#goods_type .c").attr('data-type');
+            //获取商品数量
+            //alert(goods_type);
+            //获取商品id用于查询
+            goods_id = $("#goods_id").val();
+            //alert(goods_id);
+
+            //return false;
+            goods_num  = $("#goods_num").val();
+            //alert(goods_num);
+
+            //判断用户是否选择商品
+            if(goods_color==undefined||goods_type==undefined){
+              alert('请先选择商品颜色和属性');
+              return false;
+            }
+
+            //将用户购买的东西存入cookie
+
+           location.href="/Order/topay/goods_color/"+goods_color+'/goods_type/'+goods_type+'/goods_num/'+goods_num+'/goods_id/'+goods_id+'/type/buy';
+            
+            //return false
+           })
+
          </script>
          <div class="goods-extra clearfix"> 
           <div class="extra-services"> 

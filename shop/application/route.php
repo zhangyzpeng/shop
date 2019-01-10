@@ -62,7 +62,8 @@ Route::get('Order/cart','home/Order/cart');
 Route::post('cart/add','home/Order/addCart');
 Route::post('cart/del','home/Order/delCart');
 //删除购物车
-
+//购买商品
+Route::get('Order/topay','home/Order/topay');
 return [
 	
  //前台路由
@@ -77,7 +78,7 @@ return [
     //购物车
     //'Order/cart'=>'home/Order/cart',
     //支付
-     'Order/topay'=>'home/Order/topay',
+     //'Order/topay'=>'home/Order/topay',
      //付款
  	'Order/pay'=>'home/Order/pay',
 

@@ -37,4 +37,9 @@ class Goods extends Model
                     ->select();
                     return $res;
     }
+     //根据id查出购物车中的商品
+    public function getCartGoods($id){
+        $res = $this->where('id',$id)->field(['goods_img','goods_name','pro_price','origin_price'])->find();
+        return $res;
+    }
 }
